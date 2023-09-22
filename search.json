@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "projects/dlensembling/dlensembling.html",
+    "href": "projects/dlensembling/dlensembling.html",
+    "title": "Metalearning in Time Series Ensembles",
+    "section": "",
+    "text": "Test"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Data Science Projects for Quantitative Finance",
+    "section": "",
+    "text": "Metalearning in Time Series Ensembles\n\n\n\n\n\nCan we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase?\n\n\n\n\n\nxyz chart"
+  }
+]
