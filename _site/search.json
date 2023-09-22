@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Data Science Projects for Quantitative Finance",
+    "section": "",
+    "text": "Metalearning in Time Series Ensembles\n\n\n\n\n\nCan we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase?\n\n\n\n\n\nxyz chart"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "projects/post-with-code/index.html",
+    "href": "projects/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code."
+  },
+  {
+    "objectID": "projects/welcome/index.html",
+    "href": "projects/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "projects/post-with-code/dlensembling.html",
+    "href": "projects/post-with-code/dlensembling.html",
+    "title": "Metalearning in Time Series Ensembles",
+    "section": "",
+    "text": "Test"
+  },
+  {
+    "objectID": "index.html#plot",
+    "href": "index.html#plot",
+    "title": "Data Science Projects for Quantitative Finance",
+    "section": "Plot",
+    "text": "Plot\n\nPlot.rectY(data, \n  Plot.stackY(\n    Plot.binX( \n      {y: \"count\"}, \n      {x: \"body_mass_g\", fill: \"species\", thresholds: 20})\n    )\n  ).plot({\n    facet: {\n      data,\n      x: \"sex\"\n    },\n    marks: [Plot.frame()]\n  })"
+  },
+  {
+    "objectID": "index.html#data",
+    "href": "index.html#data",
+    "title": "Data Science Projects for Quantitative Finance",
+    "section": "Data",
+    "text": "Data\n\nInputs.table(filtered)"
+  }
+]

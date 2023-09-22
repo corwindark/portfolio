@@ -1,0 +1,11 @@
+---
+title: "Metalearning in Time Series Ensembles"
+subtitle: "Using Deep Learning to Select Statistical Models"
+date: "2023-09-01"
+author: "Corwin Dark"
+image: "image.jpg"
+---
+
+![](image.jpg)
+
+Test
