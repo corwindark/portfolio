@@ -9,6 +9,13 @@ image: "image.jpg"
 ![](image.jpg)
 
 ```{python}
+import subprocess
+import sys
+
+#def install(package):
+ ##   subprocess.check_call([sys.executable, "-m", "pip", #"install", package])
+
+#install("nbclient")
 
 import yfinance as yf
 import matplotlib.pyplot as plt
