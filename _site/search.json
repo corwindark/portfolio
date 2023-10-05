@@ -47,5 +47,19 @@
     "title": "Data Science Projects for Quantitative Finance",
     "section": "Data",
     "text": "Data\n\nInputs.table(filtered)"
+  },
+  {
+    "objectID": "projects/dlensembling/dlensembling.html",
+    "href": "projects/dlensembling/dlensembling.html",
+    "title": "Metalearning in Time Series Ensembles",
+    "section": "",
+    "text": "Test"
+  },
+  {
+    "objectID": "portfolio/projects/dlensembling/dlensembling.html",
+    "href": "portfolio/projects/dlensembling/dlensembling.html",
+    "title": "Metalearning in Time Series Ensembles",
+    "section": "",
+    "text": "Get Hourly SPY Data Since 1/1/22\n\nimport yfinance as yf\nimport matplotlib.pyplot as plt\nimport nbformat\n\ndata = yf.download('SPY','2022-01-01','2023-09-30', interval =\"60m\")\n\ndata['Adj Close'].plot()\nplt.ion()"
   }
 ]

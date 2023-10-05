@@ -8,4 +8,16 @@ image: "image.jpg"
 
 ![](image.jpg)
 
-Test
+```{python}
+
+import yfinance as yf
+import matplotlib.pyplot as plt
+import nbformat
+
+data = yf.download('SPY','2022-01-01','2023-09-30', interval ="60m")
+
+data['Adj Close'].plot()
+plt.ion()
+
+
+```
