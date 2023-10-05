@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "projects/dlensembling/dlensembling.html",
+    "href": "projects/dlensembling/dlensembling.html",
+    "title": "Metalearning in Time Series Ensembles",
+    "section": "",
+    "text": "Get Hourly SPY Data Since 1/1/22\n\nimport yfinance as yf\n\ndata = yf.download('SPY','2022-01-01','2023-09-30', interval =\"60m\")\nimport matplotlib.pyplot as plt\n%matplotlib inline\n\ndata['Adj Close'].plot()\nplt.ion()\n\n[*********************100%%**********************]  1 of 1 completed\n\n\n&lt;contextlib.ExitStack at 0x19d8e380550&gt;"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Data Science Projects for Quantitative Finance",
+    "section": "",
+    "text": "Metalearning in Time Series Ensembles\n\n\n\n\n\nCan we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase?\n\n\n\n\n\nxyz chart"
+  }
+]

@@ -1,0 +1,22 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "portfolio"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+      - href: projects/dlensembling/dlensembling.qmd
+        text: NN Ensembling
+
+format:
+  html:
+    theme: solar
+    css: styles.css
+    toc: true
+
+
+
