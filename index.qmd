@@ -1,0 +1,27 @@
+---
+title: "Data Science Projects for Quantitative Finance"
+subtitle: " "
+title-block-banner: false
+format: html
+---
+---
+
+
+<h3> Metalearning in Time Series Ensembles </h3>
+::: {.grid}
+
+::: {.g-col-8}
+
+<p> </p>
+
+Can we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase?
+
+:::
+
+::: {.g-col-4} 
+
+![xyz chart](projects/dlensembling/image.jpg)
+
+:::
+
+:::
