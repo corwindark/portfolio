@@ -1,0 +1,11 @@
+{
+  "hash": "daf4c12ef3891dc6eb91a77bad41aed4",
+  "result": {
+    "markdown": "---\ntitle: \"Metalearning in Time Series Ensembles\"\nsubtitle: \"Using Deep Learning to Select Statistical Models\"\ndate: \"2023-09-01\"\nauthor: \"Corwin Dark\"\nimage: \"image.jpg\"\n---\n\n![](image.jpg)\n\n::: {.cell execution_count=1}\n``` {.python .cell-code}\nimport subprocess\nimport sys\n\n#def install(package):\n ##   subprocess.check_call([sys.executable, \"-m\", \"pip\", #\"install\", package])\n\n#install(\"nbclient\")\n\nimport yfinance as yf\nimport matplotlib.pyplot as plt\nimport nbformat\n\ndata = yf.download('SPY','2022-01-01','2023-09-30', interval =\"60m\")\n\ndata['Adj Close'].plot()\nplt.ion()\n\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n\r[*********************100%%**********************]  1 of 1 completed\n```\n:::\n\n::: {.cell-output .cell-output-display execution_count=1}\n```\n<contextlib.ExitStack at 0x1653cb278b0>\n```\n:::\n\n::: {.cell-output .cell-output-display}\n![](dlensembling_files/figure-html/cell-2-output-3.png){width=575 height=412}\n:::\n:::\n\n\n",
+    "supporting": [
+      "dlensembling_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
