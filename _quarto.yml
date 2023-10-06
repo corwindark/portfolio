@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  favicon: images/cdicon.png
+  favicon: images/favicon-32x32.png
   title: "portfolio"
   navbar:
     left:
