@@ -4,7 +4,7 @@
     "href": "projects/dlensembling/dlensembling.html",
     "title": "Metalearning in Time Series Ensembles",
     "section": "",
-    "text": "Get Hourly SPY Data Since 1/1/22\n\nimport yfinance as yf\n\ndata = yf.download('SPY','2022-01-01','2023-09-30', interval =\"60m\")\nimport matplotlib.pyplot as plt\n%matplotlib inline\n\ndata['Adj Close'].plot()\nplt.ion()\n\n[*********************100%%**********************]  1 of 1 completed\n\n\n&lt;contextlib.ExitStack at 0x1d2631b4f10&gt;"
+    "text": "Get Hourly SPY Data Since 1/1/22\n\nimport yfinance as yf\n\ndata = yf.download('SPY','2022-01-01','2023-09-30', interval =\"60m\")\nimport matplotlib.pyplot as plt\n%matplotlib inline\n\ndata['Adj Close'].plot()\nplt.ion()\n\n[*********************100%%**********************]  1 of 1 completed\n\n\n&lt;contextlib.ExitStack at 0x18d618b9a50&gt;"
   },
   {
     "objectID": "index.html",
