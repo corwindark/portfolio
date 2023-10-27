@@ -32,6 +32,7 @@ print(data)
 
 # maybe consider splitting by whole days here
 # 20% test split but could do more
+# or 30%
 train_size = 2400
 
 data_train = data[:train_size]
