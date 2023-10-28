@@ -39,7 +39,7 @@ data_train = data[:train_size]
 data_test = data[train_size:]
 
 test_size = len(data_test)
-# 656 today
+# 656 as of today
 
 data_test = data_test[["Datetime", "Close"]]
 data_train = data_train[["Datetime", "Close"]]
