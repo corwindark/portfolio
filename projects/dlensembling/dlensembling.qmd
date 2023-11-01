@@ -143,7 +143,6 @@ aaPrediction2.rename(columns = {0 : "val", "x": "x"}, inplace = True )
 aaPrediction2 = pd.DataFrame(aaPrediction2)
 
 print(aaPrediction)
-#print(smallTest["Close"])
 
 plt.figure(figsize= (8,5) )
 plt.plot(smallTrain["x"], smallTrain["Close"], label = "Training")
