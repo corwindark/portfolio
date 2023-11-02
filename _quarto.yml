@@ -10,7 +10,7 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
-      - href: projects/dlensembling/dlensembling.qmd
+      - href: dlensembling.qmd
         text: NN Ensembling
 
 format:
