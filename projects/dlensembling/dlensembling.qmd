@@ -137,6 +137,8 @@ smallTrain["x"] = range(1,backN + 1)
 
 #aaPrediction = pd.Series(aaPrediction)
 #aaPrediction.index = smallTest.index
+#aaPrediction = pd.Series(aaPrediction)
+#aaPrediction.index = smallTest.index
 aaPrediction2 = pd.DataFrame([float(x) for x in aaPrediction])
 aaPrediction2["x"] = range(backN + 1, backN + test_out_size + 1)
 aaPrediction2.rename(columns = {0 : "val", "x": "x"}, inplace = True )
