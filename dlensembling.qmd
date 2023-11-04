@@ -12,13 +12,21 @@ Get Hourly SPY Data Since 1/1/22
 ```{python}
 import yfinance as yf
 import pandas as pd
+import seaborn as sns
+import matplotlib as plt
+from sklearn.model_selection import TimeSeriesSplit
 from datetime import datetime
-data = yf.download('SPY','2022-01-01','2023-09-30', interval ="60m")
 import matplotlib.pyplot as plt
+
+
+
+
+data = yf.download('SPY','2022-01-01','2023-09-30', interval ="60m")
 %matplotlib inline
 
 data['Adj Close'].plot()
 plt.ion()
+print(data)
 
 ```
 
@@ -26,20 +34,19 @@ plt.ion()
 Now we need to split the data.
 
 ``` {python}
-data.reset_index(inplace=True)
-print(data)
+data.reset_index(inplace = True)
+
+```
 
 
-# maybe consider splitting by whole days here
-# 20% test split but could do more
-# or 30% or 50%
+```{python}
 train_size = 2400
 
 data_train = data[:train_size]
 data_test = data[train_size:]
 
 test_size = len(data_test)
-# 656 as of today
+
 
 data_test = data_test[["Datetime", "Close"]]
 data_train = data_train[["Datetime", "Close"]]
@@ -47,47 +54,83 @@ data_train = data_train[["Datetime", "Close"]]
 seriesTrain = data_train.set_index('Datetime')
 seriesTest = data_test.set_index('Datetime')
 
-'''
-clean_test = data_test
 
-clean_test['unique_id'] = range(0, len(clean_test['Close']))
-
-clean_test.rename({"Datetime" : "ds", "Close": "y"}, axis = "columns", inplace = True)
-clean_test = pd.DataFrame(clean_test)
-
-clean_test = clean_test[['unique_id', 'ds', 'y']]
-'''
+```
 
 
+Attempting to implement with sklearn tscv 
+```{python}
+"""
+tscvData = data[["Close"]]
 
 
+# https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html
+
+tscv = TimeSeriesSplit(gap=0 max_train_size=None, n_splits=5, test_size=1)
+
+for i, (train_index, test_index) in enumerate(tscv.split(tscvData)):
+    print(i, "train: ", train_index, "test: ", test_index)
+    model = auto_arima(tscvData[train_index])
+    predictions = model.predict(n_periods = 1)
+    print(predictions)
+"""
 
 ```
 
 
 ``` {python}
+# Let's reformat the test data into a dataframe we can add our predictions to
 
-def crossValidation(train, test, window, predReturnFunction):
-    totalPredictions = []
+testResultsDF = pd.DataFrame(index = range(test_size))
+testResultsDF['Price'] = 0
+# Get a clean format for close prices
+for i in range(0,test_size):
+    testResultsDF['Price'][i] = seriesTest.values[i][0]
+
+
+# Initialize empty cells for the statistical forecasts
+testResultsDF['auto_arima'] = 0
+testResultsDF['dyn_theta'] = 0
+testResultsDF['auto_ets'] = 0
+testResultsDF['complex_smoothing'] = 0
+
+```
+
+
+``` {python}
+def crossValidation(train, test, window, outputFrame, modelName, predReturnFunction):
+
+    totalPredictions = pd.Series([])
     windows = len(test) // window
 
-    for i in range(0, windows):
-        print("Window: ", i)
+    predictionIndex = 0
 
+    for i in range(0, windows):
+        # debug
+        print("Window: ", i, "Method: ", modelName)
+
+        # How many observations to move forward each frame
         addNum = i * window
-        intermediateData = train.append(test[:addNum])
+        # Combine training data with additional test window
+        intermediateData = pd.concat([train, test[:addNum]])
+        # Generate prediction of the given window size
         prediction = predReturnFunction(intermediateData, window)
         print(prediction)
+        # Check if we have multiple predictions in the window
+        if len(prediction) > 1:
+            # Store each predicted value with a loop
+            for j in range(0,window):
 
-        for i in range(1, len(prediction)):
-            totalPredictions = totalPredictions + [prediction[i]]
-    
-    #remove hanging dates if somem were not included in a window
-    # to make test indices the same length as the predictions
-    #testSheared = test[:(windows*window)]
-    #totalPredictions.index = testSheared.index
+                # Store in the prediction-comparison frame
+                outputFrame[modelName][predictionIndex] = prediction[j]
 
-    return totalPredictions
+                # Move to next open spot
+                predictionIndex += 1 
+        else:
+            
+            outputFrame[modelName][predictionIndex] = prediction[0]
+            predictionIndex += 1
+
 
 
 
@@ -96,34 +139,85 @@ def crossValidation(train, test, window, predReturnFunction):
 And then we need to train the statistical models
 
 
+Import packages
 ```{python}
-
-
 from pmdarima.arima import auto_arima
 from pmdarima import model_selection
+from statsforecast import StatsForecast
+from statsforecast.models import AutoCES, AutoARIMA
+import numpy as np
+import time
+```
+
+Run Prediction
+```{python}
 
 def aaPredFunction(dataIn, windowSize):
-    model = auto_arima(dataIn)
-    predictions = model.predict(n_periods = windowSize)
-    return predictions
+    model = AutoARIMA()
+    fit1 = model.fit(y = np.concatenate(dataIn.to_numpy()))
+    prediction = fit1.predict(h = windowSize)
+    return prediction.get('mean')
 
-#aaModel = auto_arima(seriesTrain)
-test_out_size = 5
 
+def cesPredFunction(dataIn, windowSize):
+    model = AutoCES()
+    fit1 = model.fit(y = np.concatenate(dataIn.to_numpy()))
+    predictionList = fit1.predict(windowSize)
+    return predictionList.get('mean')
+
+
+
+
+# Set the number of observations to be included in the test set
+test_out_size = 6
 
 tempTest = seriesTest[:test_out_size]
-print(model_selection.cross_val_predict(, tempTest))
 
-tempModel = auto_arima(seriesTrain)
+# Auto Arima
+crossValidation(seriesTrain, tempTest, 3, testResultsDF, 'auto_arima', aaPredFunction)
 
-tempModel.summary()
-cv = model_selection.RollingForecast(window_size=1, step=1, h=1)
-model1_cv_scores = model_selection.cross_val_score(
-    tempModel, seriesTest, scoring='smape', cv=cv, verbose=2)
+crossValidation(seriesTrain, tempTest, 3, testResultsDF, 'complex_smoothing', cesPredFunction)
 
-model1_cv_scores
-#aaPrediction = crossValidation(seriesTrain, tempTest, 1, aaPredFunction)
+
+"""
+working CES save
+model = AutoCES()
+fit1 = model.fit(y = np.concatenate(seriesTrain.to_numpy()))
+prediction = fit1.predict(2)
+print(prediction.get('mean'))
+
+
+start = time.process_time()
+
+model = AutoARIMA()
+fit1 = model.fit(y = np.concatenate(seriesTrain.to_numpy()))
+prediction = fit1.predict(2)
+print(prediction.get('mean'))
+
+print(time.process_time() - start)
+
+
+start = time.process_time()
+
+aaPredFunction(seriesTrain, 2)
+
+print(time.process_time() - start)
+
+
+"""
 ```
+
+
+Let's try and visualize the cross-validated auto-arima performance
+
+``` {python}
+#print(aaPrediction[0].tostring)
+#aaPrediction = pd.DataFrame(aaPrediction)
+aaPrediction[1].plot()
+
+#sns.lineplot(aaPrediction, x = aaPrediction.index, y = aaPrediction)
+```
+
 
 ```{python}
 
