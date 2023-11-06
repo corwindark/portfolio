@@ -144,7 +144,7 @@ Import packages
 from pmdarima.arima import auto_arima
 from pmdarima import model_selection
 from statsforecast import StatsForecast
-from statsforecast.models import AutoCES, AutoARIMA
+from statsforecast.models import AutoCES, AutoARIMA, AutoETS, DynamicOptimizedTheta
 import numpy as np
 import time
 ```
@@ -165,58 +165,106 @@ def cesPredFunction(dataIn, windowSize):
     predictionList = fit1.predict(windowSize)
     return predictionList.get('mean')
 
+def etsPredFunction(dataIn, windowSize):
+    model = AutoETS()
+    fit1 = model.fit(y = np.concatenate(dataIn.to_numpy()))
+    predictionList = fit1.predict(windowSize)
+    return predictionList.get('mean')
 
+def dotPredFunction(dataIn, windowSize):
+    model = DynamicOptimizedTheta()
+    fit1 = model.fit(y = np.concatenate(dataIn.to_numpy()))
+    predictionList = fit1.predict(windowSize)
+    return predictionList.get('mean')
 
 
 # Set the number of observations to be included in the test set
-test_out_size = 6
+test_out_size = 40
 
 tempTest = seriesTest[:test_out_size]
 
 # Auto Arima
-crossValidation(seriesTrain, tempTest, 3, testResultsDF, 'auto_arima', aaPredFunction)
+crossValidation(seriesTrain, tempTest, 1, testResultsDF, 'auto_arima', aaPredFunction)
 
-crossValidation(seriesTrain, tempTest, 3, testResultsDF, 'complex_smoothing', cesPredFunction)
+crossValidation(seriesTrain, tempTest, 1, testResultsDF, 'complex_smoothing', cesPredFunction)
 
+crossValidation(seriesTrain, tempTest, 1, testResultsDF, 'auto_ets', etsPredFunction)
 
-"""
-working CES save
-model = AutoCES()
-fit1 = model.fit(y = np.concatenate(seriesTrain.to_numpy()))
-prediction = fit1.predict(2)
-print(prediction.get('mean'))
+crossValidation(seriesTrain, tempTest, 1, testResultsDF, 'dyn_theta', dotPredFunction)
 
 
-start = time.process_time()
-
-model = AutoARIMA()
-fit1 = model.fit(y = np.concatenate(seriesTrain.to_numpy()))
-prediction = fit1.predict(2)
-print(prediction.get('mean'))
-
-print(time.process_time() - start)
-
-
-start = time.process_time()
-
-aaPredFunction(seriesTrain, 2)
-
-print(time.process_time() - start)
-
-
-"""
 ```
 
 
 Let's try and visualize the cross-validated auto-arima performance
 
 ``` {python}
-#print(aaPrediction[0].tostring)
-#aaPrediction = pd.DataFrame(aaPrediction)
-aaPrediction[1].plot()
 
-#sns.lineplot(aaPrediction, x = aaPrediction.index, y = aaPrediction)
+print(testResultsDF)
+
+plot1 = testResultsDF.iloc[0:test_out_size,:]
+
+# get the index as a column for plotting
+plot1 = plot1.reset_index()
+
+plot1 = pd.melt(plot1, id_vars = ['index'], value_vars =  ['auto_arima', 'auto_ets', 'complex_smoothing', 'dyn_theta', 'Price'])
+
+print(plot1)
+
+sns.lineplot(plot1, x = 'index', y = 'value', hue = 'variable')
+
+
 ```
+
+Let's get a more detailed plot of how close each method is at each increment
+
+``` {python}
+
+print(testResultsDF)
+
+plot2 = testResultsDF.iloc[0:test_out_size,:]
+
+plot2['auto_arima'] = plot2['auto_arima'] - plot2['Price']
+plot2['auto_ets'] = plot2['auto_ets'] - plot2['Price']
+plot2['complex_smoothing'] = plot2['complex_smoothing'] - plot2['Price']
+plot2['dyn_theta'] = plot2['dyn_theta'] - plot2['Price']
+
+
+
+
+
+# get the index as a column for plotting
+plot2 = plot2.reset_index()
+
+errorDat = plot2.copy()
+
+plot2 = pd.melt(plot2, id_vars = ['index'], value_vars =  ['auto_arima', 'auto_ets', 'complex_smoothing', 'dyn_theta'])
+
+sns.barplot(plot2, x = 'index', y = 'value', hue = 'variable')
+
+
+```
+
+
+Let's look at cumulative absolute error of the models, compared to best choice at each time point
+
+```{python}
+
+
+errorDat['optimal'] = 0
+
+for index in range(0, errorDat.shape[0]):
+    print(index)
+    predictionErrors = errorDat.loc[:,('auto_arima', 'auto_ets', 'dyn_theta', 'complex_smoothing') ]
+    
+    print(predictionErrors.min())
+
+    errorDat.loc[index ,'optimal'] = min(predictionErrors)
+   
+errorDat
+
+```
+
 
 
 ```{python}
