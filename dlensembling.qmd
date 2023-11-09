@@ -141,8 +141,6 @@ And then we need to train the statistical models
 
 Import packages
 ```{python}
-from pmdarima.arima import auto_arima
-from pmdarima import model_selection
 from statsforecast import StatsForecast
 from statsforecast.models import AutoCES, AutoARIMA, AutoETS, DynamicOptimizedTheta
 import numpy as np
@@ -267,8 +265,6 @@ errorDat
 
 
 
-```{python}
-
 backN = 50
 
 smallTest = seriesTest[:test_out_size]
@@ -294,7 +290,6 @@ plt.plot(smallTest["x"], smallTest["Close"], label = "Test")
 plt.plot(aaPrediction2["x"], aaPrediction2["val"], label = "Auto Arima")
 plt.legend(loc = 'upper left')
 plt.show()
-```
 
 
 
