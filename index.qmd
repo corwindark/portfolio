@@ -1,11 +1,51 @@
 ---
-title: "Data Science Projects for Quantitative Finance"
+title: "Data Science for Financial Markets"
 subtitle: " "
 title-block-banner: false
 format: html
 ---
----
 
+# Selected Projects
+
+
+[![Button Click]][Link]
+ 
+[![Button Hover]][Link] 
+
+
+[![Button Example]][Link]
+[![Button Example]][Link]
+
+
+<!----------------------------------------------------------------------------->
+
+[Link]: # 'Link with example title.'
+     
+[Link]: ## "asdf"
+
+<!---------------------------------[ Buttons ]--------------------------------->
+
+[Button Example]: https://img.shields.io/badge/Title-37a779?style=for-the-badge
+
+
+
+
+[test](){.btn .btn-outline-primary data-toggle="tooltip" title="See all Python projects"}
+
+
+[test](dlensembling.qmd){.btn .btn-outline-primary .height;100px}
+
+
+[test](dlensembling.qmd){.btn .btn-outline-primary height:100px}
+
+
+[test](dlensembling.qmd){.btn .btn-outline-primary height=100px}
+
+
+[test](dlensembling.qmd){.btn .btn-outline-primary .btn-height=100px}
+
+
+[test](dlensembling.qmd){.btn .btn-outline-primary}
 
 <h3> Metalearning in Time Series Ensembles </h3>
 ::: {.grid}

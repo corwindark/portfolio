@@ -8,13 +8,15 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: Home
-      - about.qmd
+        text: Portfolio
+      - href: about.qmd
+        text: About Me
       - href: dlensembling.qmd
         text: NN Ensembling
 
 format:
   html:
+
     theme: solar
     css: styles.css
     toc: true
