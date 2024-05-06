@@ -14,7 +14,7 @@ format: html
 
 
 [![Button Example]][Link]
-[![Button Example]][Link]
+[![Button Example2]][Link]
 
 
 <!----------------------------------------------------------------------------->
@@ -28,7 +28,7 @@ format: html
 [Button Example]: https://img.shields.io/badge/Title-37a779?style=for-the-badge
 
 
-
+[Button Example2]: images/python.png
 
 [test](){.btn .btn-outline-primary data-toggle="tooltip" title="See all Python projects"}
 
