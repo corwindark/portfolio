@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Data Science for Financial Markets",
     "section": "",
-    "text": "Selected Projects\n[Button Click]   [Button Hover] \n \n\n\ntest\ntest{.btn .btn-outline-primary .height;100px}\ntest{.btn .btn-outline-primary height:100px}\ntest\ntest{.btn .btn-outline-primary .btn-height=100px}\ntest\n\nMetalearning in Time Series Ensembles\n\n\n\n\n\nCan we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase?\n\n\n\n\n\nxyz chart"
+    "text": "Selected Projects\n[Button Click]   [Button Hover] \n  \n\n\ntest\ntest{.btn .btn-outline-primary .height;100px}\ntest{.btn .btn-outline-primary height:100px}\ntest\ntest{.btn .btn-outline-primary .btn-height=100px}\ntest\n\nMetalearning in Time Series Ensembles\n\n\n\n\n\nCan we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase?\n\n\n\n\n\nxyz chart"
   },
   {
     "objectID": "dlensembling.html",
