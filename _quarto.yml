@@ -3,6 +3,7 @@ project:
   output-dir: docs
 
 website:
+  google-analytics: "G-ZVECF4ZDF3"
   favicon: images/favicon-32x32.png
   title: "portfolio"
   navbar:
@@ -11,8 +12,8 @@ website:
         text: Portfolio
       - href: about.qmd
         text: About Me
-      - href: dlensembling.qmd
-        text: NN Ensembling
+      #- href: dlensembling.qmd
+      #  text: NN Ensembling
 
 format:
   html:
