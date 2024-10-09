@@ -3,11 +3,7 @@ title: "Data Science for Financial Markets"
 subtitle: " "
 title-block-banner: false
 format: html
-listing: 
-    contents:   "projects/*.qmd"
-    sort: "date"
-    categories: true
-    
+categories: [python, dataviz]
 ---
 
 # Selected Projects
@@ -27,7 +23,6 @@ listing:
 
 [Link]: # 'Link with example title.'
      
-
 <!---------------------------------[ Buttons ]--------------------------------->
 
 [Button Example]: https://img.shields.io/badge/Title-37a779?style=for-the-badge
@@ -35,7 +30,7 @@ listing:
 
 [Button Example2]: https://img.shields.io/badge/Python-blue
 
-[Button Example3]: https://raw.githubusercontent.com/corwindark/portfolio/gh-pages/images/python.png
+[Button Example3]:  https://raw.githubusercontent.com/corwindark/portfolio/gh-pages/images/python.png
 
 [test](){.btn .btn-outline-primary data-toggle="tooltip" title="See all Python projects"}
 
