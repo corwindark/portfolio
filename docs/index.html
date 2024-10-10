@@ -74,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -203,10 +203,16 @@ Metalearning in Time Series Ensembles
 </section>
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="listing-actions-group">
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="python,dataviz" data-listing-file-modified-sort="1728490842678" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="0" data-categories="python,dataviz" data-listing-file-modified-sort="1728495602674" data-listing-reading-time-sort="1">
 <div class="thumbnail">
-<p><a href="./projects/dl_example.html"> <p class="card-img-top"><img src="https://img.shields.io/badge/Title-37a779?style=for-the-badge.png" alt="Button Example"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="./projects/dl_example.html"> <img src="./projects/projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
 <a href="./projects/dl_example.html">
@@ -227,7 +233,7 @@ dataviz
 </div>
 <a href="./projects/dl_example.html">
 <div class="listing-description">
-[Button Click]   [Button Hover] 
+
 </div>
 </a>
 </div>

@@ -4,53 +4,6 @@ subtitle: " "
 title-block-banner: false
 format: html
 categories: [python, dataviz]
+image: ../../projects/
 ---
 
-# Selected Projects
-
-
-[![Button Click]][Link]
- 
-[![Button Hover]][Link] 
-
-
-[![Button Example]][Link]
-[![Button Example2]][Link]
-[![Button Example3]][Link]
-
-
-<!----------------------------------------------------------------------------->
-
-[Link]: # 'Link with example title.'
-     
-<!---------------------------------[ Buttons ]--------------------------------->
-
-[Button Example]: https://img.shields.io/badge/Title-37a779?style=for-the-badge
-
-
-[Button Example2]: https://img.shields.io/badge/Python-blue
-
-[Button Example3]:  https://raw.githubusercontent.com/corwindark/portfolio/gh-pages/images/python.png
-
-[test](){.btn .btn-outline-primary data-toggle="tooltip" title="See all Python projects"}
-
-
-
-<h3> Metalearning in Time Series Ensembles </h3>
-::: {.grid}
-
-::: {.g-col-8}
-
-<p> </p>
-
-Can we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase?
-
-:::
-
-::: {.g-col-4} 
-
-![xyz chart](projects/dlensembling/image.jpg)
-
-:::
-
-:::

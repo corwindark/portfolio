@@ -7,7 +7,7 @@ listing:
     contents:   "projects/*.qmd"
     sort: "date"
     categories: true
-    
+    filter-ui: [categories]
 ---
 
 # Selected Projects
