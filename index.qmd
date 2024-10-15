@@ -4,7 +4,23 @@ subtitle: " "
 title-block-banner: false
 format: html
 listing: 
-    contents:   "projects/*.qmd"
+  - id: project-listings
+    contents: listings.yml
+    sort: "date"
+    categories: true
+    filter-ui: [categories]
+  - id: project-listings2
+    contents: listings.yml
+    sort: "date"
+    categories: true
+    filter-ui: [categories]
+  - id: project-listings3
+    contents: listings.yml
+    sort: "date"
+    categories: true
+    filter-ui: [categories]
+  - id: project-listings4
+    contents: listings.yml
     sort: "date"
     categories: true
     filter-ui: [categories]
@@ -39,6 +55,34 @@ listing:
 
 [test](){.btn .btn-outline-primary data-toggle="tooltip" title="See all Python projects"}
 
+
+:::{.column-page}
+
+::: {#project-listings}
+:::
+
+:::
+
+:::{.column-page-right}
+
+::: {#project-listings2}
+:::
+
+:::
+
+:::{.column-screen}
+
+::: {#project-listings3}
+:::
+
+::: 
+
+:::{.column-screen-inset-right}
+
+::: {#project-listings4}
+:::
+
+:::
 
 
 <h3> Metalearning in Time Series Ensembles </h3>

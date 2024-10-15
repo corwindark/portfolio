@@ -4,6 +4,6 @@ subtitle: " "
 title-block-banner: false
 format: html
 categories: [python, dataviz]
-image: ../../projects/
+image: projects/dlensembling/image.jpg
 ---
 

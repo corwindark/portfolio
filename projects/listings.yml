@@ -1,0 +1,6 @@
+- title: "Archived Item 1"
+  author: Corwin Dark
+  date: 2020-01-01
+  path: "projects/dl_example.qmd"
+  categories: [archived, technology]
+  image: "projects/dlensembling/image.jpg"

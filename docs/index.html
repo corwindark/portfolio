@@ -65,20 +65,104 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-project-listings .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
       searchColumns: ["listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-project-listings'] = new List('listing-project-listings', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-project-listings2 .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-project-listings2'] = new List('listing-project-listings2', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-project-listings3 .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-project-listings3'] = new List('listing-project-listings3', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-project-listings4 .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-project-listings4'] = new List('listing-project-listings4', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -151,9 +235,9 @@ gtag('config', 'G-ZVECF4ZDF3', { 'anonymize_ip': true});
   <li><a href="#selected-projects" id="toc-selected-projects" class="nav-link active" data-scroll-target="#selected-projects">Selected Projects</a></li>
   </ul>
 </nav>
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dataviz">dataviz <span class="quarto-category-count">(1)</span></div><div class="category" data-category="python">python <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="archived">archived <span class="quarto-category-count">(4)</span></div><div class="category" data-category="technology">technology <span class="quarto-category-count">(4)</span></div></div></div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -172,14 +256,226 @@ gtag('config', 'G-ZVECF4ZDF3', { 'anonymize_ip': true});
 
 </header>
 
-<section id="selected-projects" class="level1">
+<section id="selected-projects" class="level1 page-columns page-full">
 <h1>Selected Projects</h1>
 <p><a href="#" title="Link with example title.">[Button Click]</a>   <a href="#" title="Link with example title.">[Button Hover]</a> </p>
 <p><a href="#" title="Link with example title."><img src="https://img.shields.io/badge/Title-37a779?style=for-the-badge.png" class="img-fluid" alt="Button Example"></a> <a href="#" title="Link with example title."><img src="https://img.shields.io/badge/Python-blue.png" class="img-fluid" alt="Button Example2"></a> <a href="#" title="Link with example title."><img src="https://raw.githubusercontent.com/corwindark/portfolio/gh-pages/images/python.png" class="img-fluid" alt="Button Example3"></a></p>
 <!----------------------------------------------------------------------------->
 <!---------------------------------[ Buttons ]--------------------------------->
 <p><a href="" class="btn btn-outline-primary" data-toggle="tooltip" title="See all Python projects">test</a></p>
-<h3 class="anchored" data-anchor-id="selected-projects">
+<div class="column-page">
+<div id="listing-project-listings" class="quarto-listing quarto-listing-container-default">
+<div class="listing-actions-group">
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="archived,technology" data-listing-date-sort="1577854800000">
+<div class="thumbnail">
+<p><a href="./projects/dl_example.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./projects/dl_example.html">
+<h3 class="no-anchor listing-title" data-anchor-id="selected-projects">
+Archived Item 1
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('archived'); return false;">
+archived
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('technology'); return false;">
+technology
+</div>
+</div>
+<a href="./projects/dl_example.html">
+<div class="listing-description">
+
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./projects/dl_example.html">
+<div class="listing-date">
+Jan 1, 2020
+</div>
+<div class="listing-author">
+Corwin Dark
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</div>
+<div class="column-page-right">
+<div id="listing-project-listings2" class="quarto-listing quarto-listing-container-default">
+<div class="listing-actions-group">
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="archived,technology" data-listing-date-sort="1577854800000">
+<div class="thumbnail">
+<p><a href="./projects/dl_example.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./projects/dl_example.html">
+<h3 class="no-anchor listing-title">
+Archived Item 1
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('archived'); return false;">
+archived
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('technology'); return false;">
+technology
+</div>
+</div>
+<a href="./projects/dl_example.html">
+<div class="listing-description">
+
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./projects/dl_example.html">
+<div class="listing-date">
+Jan 1, 2020
+</div>
+<div class="listing-author">
+Corwin Dark
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</div>
+<div class="column-screen">
+<div id="listing-project-listings3" class="quarto-listing quarto-listing-container-default">
+<div class="listing-actions-group">
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="archived,technology" data-listing-date-sort="1577854800000">
+<div class="thumbnail">
+<p><a href="./projects/dl_example.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./projects/dl_example.html">
+<h3 class="no-anchor listing-title">
+Archived Item 1
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('archived'); return false;">
+archived
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('technology'); return false;">
+technology
+</div>
+</div>
+<a href="./projects/dl_example.html">
+<div class="listing-description">
+
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./projects/dl_example.html">
+<div class="listing-date">
+Jan 1, 2020
+</div>
+<div class="listing-author">
+Corwin Dark
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</div>
+<div class="column-screen-inset-right">
+<div id="listing-project-listings4" class="quarto-listing quarto-listing-container-default">
+<div class="listing-actions-group">
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="archived,technology" data-listing-date-sort="1577854800000">
+<div class="thumbnail">
+<p><a href="./projects/dl_example.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./projects/dl_example.html">
+<h3 class="no-anchor listing-title">
+Archived Item 1
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('archived'); return false;">
+archived
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('technology'); return false;">
+technology
+</div>
+</div>
+<a href="./projects/dl_example.html">
+<div class="listing-description">
+
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./projects/dl_example.html">
+<div class="listing-date">
+Jan 1, 2020
+</div>
+<div class="listing-author">
+Corwin Dark
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</div>
+<h3 class="anchored">
 Metalearning in Time Series Ensembles
 </h3>
 <div class="grid">
@@ -202,50 +498,7 @@ Metalearning in Time Series Ensembles
 
 </section>
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="listing-actions-group">
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="python,dataviz" data-listing-file-modified-sort="1728495602674" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="./projects/dl_example.html"> <img src="./projects/projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./projects/dl_example.html">
-<h3 class="no-anchor listing-title">
-Data Science for Financial Markets
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('python'); return false;">
-python
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('dataviz'); return false;">
-dataviz
-</div>
-</div>
-<a href="./projects/dl_example.html">
-<div class="listing-description">
-
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./projects/dl_example.html"> </a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
