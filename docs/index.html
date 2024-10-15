@@ -24,7 +24,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -191,7 +190,7 @@ gtag('config', 'G-ZVECF4ZDF3', { 'anonymize_ip': true});
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -222,10 +221,60 @@ gtag('config', 'G-ZVECF4ZDF3', { 'anonymize_ip': true});
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data Science for Financial Markets</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./images/cdicon.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main">
+    <a href="https://github.com/sta210-s22" rel="" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">Course information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./projects/dl_example.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -317,6 +366,42 @@ No matching items
 </div>
 </div>
 <div class="column-page-right">
+
+</div>
+<h3 class="anchored">
+Metalearning in Time Series Ensembles
+</h3>
+<div class="grid">
+<div class="g-col-8">
+<p>
+</p>
+<p>Can we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase?</p>
+</div>
+<div class="g-col-4">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="projects/dlensembling/image.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">xyz chart</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<h3 class="anchored">
+SEP
+</h3>
+<h3 class="anchored">
+SEP
+</h3>
+<h3 class="anchored">
+SEP
+</h3>
+<div class="column-page">
+<div class="columns">
+<div class="column" style="width:20%;">
+<p>
+</p>
+<p>Can we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase?</p>
+</div><div class="column" style="width:80%;">
 <div id="listing-project-listings2" class="quarto-listing quarto-listing-container-default">
 <div class="listing-actions-group">
     <div class="input-group input-group-sm quarto-listing-filter">
@@ -369,128 +454,6 @@ No matching items
 </div>
 </div>
 </div>
-<div class="column-screen">
-<div id="listing-project-listings3" class="quarto-listing quarto-listing-container-default">
-<div class="listing-actions-group">
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="archived,technology" data-listing-date-sort="1577854800000">
-<div class="thumbnail">
-<p><a href="./projects/dl_example.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./projects/dl_example.html">
-<h3 class="no-anchor listing-title">
-Archived Item 1
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('archived'); return false;">
-archived
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('technology'); return false;">
-technology
-</div>
-</div>
-<a href="./projects/dl_example.html">
-<div class="listing-description">
-
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./projects/dl_example.html">
-<div class="listing-date">
-Jan 1, 2020
-</div>
-<div class="listing-author">
-Corwin Dark
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-</div>
-<div class="column-screen-inset-right">
-<div id="listing-project-listings4" class="quarto-listing quarto-listing-container-default">
-<div class="listing-actions-group">
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="archived,technology" data-listing-date-sort="1577854800000">
-<div class="thumbnail">
-<p><a href="./projects/dl_example.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./projects/dl_example.html">
-<h3 class="no-anchor listing-title">
-Archived Item 1
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('archived'); return false;">
-archived
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('technology'); return false;">
-technology
-</div>
-</div>
-<a href="./projects/dl_example.html">
-<div class="listing-description">
-
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./projects/dl_example.html">
-<div class="listing-date">
-Jan 1, 2020
-</div>
-<div class="listing-author">
-Corwin Dark
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-</div>
-<h3 class="anchored">
-Metalearning in Time Series Ensembles
-</h3>
-<div class="grid">
-<div class="g-col-8">
-<p>
-</p>
-<p>Can we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase?</p>
-</div>
-<div class="g-col-4">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="projects/dlensembling/image.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">xyz chart</figcaption>
-</figure>
-</div>
 </div>
 </div>
 
@@ -498,7 +461,107 @@ Metalearning in Time Series Ensembles
 
 </section>
 
-</main> <!-- /main -->
+<div class="quarto-listing quarto-listing-container-default" id="listing-project-listings3">
+<div class="listing-actions-group">
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="archived,technology" data-listing-date-sort="1577854800000">
+<div class="thumbnail">
+<p><a href="./projects/dl_example.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./projects/dl_example.html">
+<h3 class="no-anchor listing-title">
+Archived Item 1
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('archived'); return false;">
+archived
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('technology'); return false;">
+technology
+</div>
+</div>
+<a href="./projects/dl_example.html">
+<div class="listing-description">
+
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./projects/dl_example.html">
+<div class="listing-date">
+Jan 1, 2020
+</div>
+<div class="listing-author">
+Corwin Dark
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div><div class="quarto-listing quarto-listing-container-default" id="listing-project-listings4">
+<div class="listing-actions-group">
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="archived,technology" data-listing-date-sort="1577854800000">
+<div class="thumbnail">
+<p><a href="./projects/dl_example.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./projects/dl_example.html">
+<h3 class="no-anchor listing-title">
+Archived Item 1
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('archived'); return false;">
+archived
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('technology'); return false;">
+technology
+</div>
+</div>
+<a href="./projects/dl_example.html">
+<div class="listing-description">
+
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./projects/dl_example.html">
+<div class="listing-date">
+Jan 1, 2020
+</div>
+<div class="listing-author">
+Corwin Dark
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

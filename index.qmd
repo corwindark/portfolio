@@ -58,6 +58,8 @@ listing:
 
 :::{.column-page}
 
+
+
 ::: {#project-listings}
 :::
 
@@ -65,24 +67,10 @@ listing:
 
 :::{.column-page-right}
 
-::: {#project-listings2}
-:::
+
 
 :::
 
-:::{.column-screen}
-
-::: {#project-listings3}
-:::
-
-::: 
-
-:::{.column-screen-inset-right}
-
-::: {#project-listings4}
-:::
-
-:::
 
 
 <h3> Metalearning in Time Series Ensembles </h3>
@@ -101,5 +89,35 @@ Can we use deep learning models to identify market conditions where particular s
 ![xyz chart](projects/dlensembling/image.jpg)
 
 :::
+
+:::
+
+
+
+
+<h3> SEP </h3>
+<h3> SEP </h3>
+<h3> SEP </h3>
+
+::: {.column-page}
+
+:::: {.columns}
+
+::: {.column width="20%"}
+
+<p> </p>
+
+Can we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase?
+
+:::
+
+::: {.column width="80%"} 
+
+::: {#project-listings2}
+:::
+
+:::
+
+::::
 
 :::
