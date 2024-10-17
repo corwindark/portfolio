@@ -15,16 +15,21 @@ website:
       #- href: dlensembling.qmd
       #  text: NN Ensembling
   sidebar:
-      background: "#D9E3E4"
-      logo: "images/cdicon.png"
+      #background: "#D9E3E4"
+      logo: "images/self.png"
       pinned: true
       align: center
       tools:
         - icon: github
-          href: https://github.com/sta210-s22
-          text: "GitHub organization"
+          href: https://github.com/corwindark
+          text: "Check out my Github!"
+        - icon: linkedin
+          href: https://linkedin.com/in/corwindark
+          text: "Check out my Linkedin!"
+        - icon: envelope
+          url: mailto:corwindark@gmail.com
 
-      style: "docked"
+      style: "floating"
       search: true
       collapse-level: 1
       contents:
