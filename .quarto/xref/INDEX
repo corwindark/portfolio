@@ -16,5 +16,32 @@
   },
   "projects/dl_example.qmd": {
     "dl_example.html": "e262380d"
+  },
+  "projects/ab_test.qmd": {
+    "ab_test.html": "8cfb2900"
+  },
+  "projects/arches.qmd": {
+    "arches.html": "347119e2"
+  },
+  "projects/building_mmt.qmd": {
+    "building_mmt.html": "55def3be"
+  },
+  "projects/ensembling.qmd": {
+    "ensembling.html": "960b77d8"
+  },
+  "projects/forecasting volatility.qmd": {
+    "forecasting volatility.html": "2b35cf28"
+  },
+  "projects/portfolio_shinyapp.qmd": {
+    "portfolio_shinyapp.html": "99200b79"
+  },
+  "projects/reddit_comments.qmd": {
+    "reddit_comments.html": "76def3cf"
+  },
+  "projects/reddit_partone.qmd": {
+    "reddit_partone.html": "7cb2a596"
+  },
+  "projects/torchmole.qmd": {
+    "torchmole.html": "99ff1363"
   }
 }

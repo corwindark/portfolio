@@ -89,90 +89,6 @@ ul.task-list li input[type="checkbox"] {
       window['quarto-listing-loaded']();
     }
   })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-project-listings2 .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-project-listings2'] = new List('listing-project-listings2', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-project-listings3 .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-project-listings3'] = new List('listing-project-listings3', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-project-listings4 .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-project-listings4'] = new List('listing-project-listings4', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
   </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZVECF4ZDF3"></script>
 
@@ -267,7 +183,7 @@ gtag('config', 'G-ZVECF4ZDF3', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./projects/dl_example.html" class="sidebar-item-text sidebar-link">
+  <a href="./projects/dl_example.qmd" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -279,14 +195,7 @@ gtag('config', 'G-ZVECF4ZDF3', { 'anonymize_ip': true});
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#selected-projects" id="toc-selected-projects" class="nav-link active" data-scroll-target="#selected-projects">Selected Projects</a></li>
-  </ul>
-</nav>
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="archived">archived <span class="quarto-category-count">(4)</span></div><div class="category" data-category="technology">technology <span class="quarto-category-count">(4)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(9)</span></div><div class="category" data-category="AB Testing">AB Testing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="API">API <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ARIMA">ARIMA <span class="quarto-category-count">(2)</span></div><div class="category" data-category="App Deployment">App Deployment <span class="quarto-category-count">(1)</span></div><div class="category" data-category="AzureML">AzureML <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Big Data">Big Data <span class="quarto-category-count">(1)</span></div><div class="category" data-category="CD/CI">CD/CI <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Client-Server Coding">Client-Server Coding <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Data Visualization">Data Visualization <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Entrepreneurship">Entrepreneurship <span class="quarto-category-count">(1)</span></div><div class="category" data-category="External Datasets">External Datasets <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Financial Markets">Financial Markets <span class="quarto-category-count">(2)</span></div><div class="category" data-category="GARCH">GARCH <span class="quarto-category-count">(2)</span></div><div class="category" data-category="GIS">GIS <span class="quarto-category-count">(1)</span></div><div class="category" data-category="HTML">HTML <span class="quarto-category-count">(1)</span></div><div class="category" data-category="JavaScript">JavaScript <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Keras">Keras <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Lua">Lua <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Model Validation">Model Validation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="NLP">NLP <span class="quarto-category-count">(1)</span></div><div class="category" data-category="NLTK">NLTK <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Naive Bayes">Naive Bayes <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Neural Networks">Neural Networks <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Package Development">Package Development <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Portfolio Management">Portfolio Management <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Product Design">Product Design <span class="quarto-category-count">(1)</span></div><div class="category" data-category="PySpark">PySpark <span class="quarto-category-count">(1)</span></div><div class="category" data-category="PyTorch">PyTorch <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Python">Python <span class="quarto-category-count">(4)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Random Forests">Random Forests <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Regression">Regression <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Sagemaker">Sagemaker <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Shiny Apps">Shiny Apps <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Statistical Forecasting">Statistical Forecasting <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Time Series">Time Series <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Web Apps">Web Apps <span class="quarto-category-count">(1)</span></div><div class="category" data-category="XGBoost">XGBoost <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
@@ -309,12 +218,7 @@ gtag('config', 'G-ZVECF4ZDF3', { 'anonymize_ip': true});
 
 <section id="selected-projects" class="level1 page-columns page-full">
 <h1>Selected Projects</h1>
-<p><a href="#" title="Link with example title.">[Button Click]</a>   <a href="#" title="Link with example title.">[Button Hover]</a> </p>
-<p><a href="#" title="Link with example title."><img src="https://img.shields.io/badge/Title-37a779?style=for-the-badge.png" class="img-fluid" alt="Button Example"></a> <a href="#" title="Link with example title."><img src="https://img.shields.io/badge/Python-blue.png" class="img-fluid" alt="Button Example2"></a> <a href="#" title="Link with example title."><img src="https://raw.githubusercontent.com/corwindark/portfolio/gh-pages/images/python.png" class="img-fluid" alt="Button Example3"></a></p>
-<!----------------------------------------------------------------------------->
-<!---------------------------------[ Buttons ]--------------------------------->
-<p><a href="" class="btn btn-outline-primary" data-toggle="tooltip" title="See all Python projects">test</a></p>
-<div class="column-page">
+<div class="column-page-right">
 <div id="listing-project-listings" class="quarto-listing quarto-listing-container-default">
 <div class="listing-actions-group">
     <div class="input-group input-group-sm quarto-listing-filter">
@@ -323,35 +227,176 @@ gtag('config', 'G-ZVECF4ZDF3', { 'anonymize_ip': true});
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="archived,technology" data-listing-date-sort="1577854800000">
+<div class="quarto-post image-right" data-index="0" data-categories="AB Testing,Python" data-listing-date-sort="1728964800000">
 <div class="thumbnail">
-<p><a href="./projects/dl_example.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
+<p><a href="./projects/ab_test.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
-<a href="./projects/dl_example.html">
+<a href="./projects/ab_test.html">
 <h3 class="no-anchor listing-title" data-anchor-id="selected-projects">
-Archived Item 1
+Driving Game Profitability with AB Tests
 </h3>
 <div class="listing-subtitle">
 
 </div>
 </a>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('archived'); return false;">
-archived
+<div class="listing-category" onclick="window.quartoListingCategory('AB Testing'); return false;">
+AB Testing
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('technology'); return false;">
-technology
+<div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
+Python
 </div>
 </div>
-<a href="./projects/dl_example.html">
+<a href="./projects/ab_test.html">
 <div class="listing-description">
-
+<p>Using AB tests to drive greater engagement and conversion rate throughout the funnel of a game I developed on the Roblox platform, improving return by 30%.</p>
 </div>
 </a>
 </div>
 <div class="metadata">
-<a href="./projects/dl_example.html">
+<a href="./projects/ab_test.html">
+<div class="listing-date">
+Oct 15, 2024
+</div>
+<div class="listing-author">
+Corwin Dark
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="PySpark,NLP,NLTK,AzureML,Sagemaker,Big Data" data-listing-date-sort="NaN">
+<div class="thumbnail">
+<p><a href="./projects/reddit_comments.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./projects/reddit_comments.html">
+<h3 class="no-anchor listing-title">
+Mining Features from Massive Comment Datasets
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('PySpark'); return false;">
+PySpark
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('NLP'); return false;">
+NLP
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('NLTK'); return false;">
+NLTK
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('AzureML'); return false;">
+AzureML
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Sagemaker'); return false;">
+Sagemaker
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Big Data'); return false;">
+Big Data
+</div>
+</div>
+<a href="./projects/reddit_comments.html">
+<div class="listing-description">
+<p>Predicting retail trader activity through Natural Language processing across more than 700 million Reddit comments. Accomplished via PySpark, with elements of the pipeline done in both AWS and Azure ecosystems simulatenously.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./projects/reddit_comments.html">
+<div class="listing-date">
+Invalid Date
+</div>
+<div class="listing-author">
+Corwin Dark
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="PyTorch,Package Development,CD/CI,Data Visualization,Python" data-listing-date-sort="NaN">
+<div class="thumbnail">
+<p><a href="./projects/torchmole.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./projects/torchmole.html">
+<h3 class="no-anchor listing-title">
+Encoding Atomic Environments with Pytorch
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('PyTorch'); return false;">
+PyTorch
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Package Development'); return false;">
+Package Development
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('CD/CI'); return false;">
+CD/CI
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Data Visualization'); return false;">
+Data Visualization
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
+Python
+</div>
+</div>
+<a href="./projects/torchmole.html">
+<div class="listing-description">
+<p>Building a Python package (TorchMole)</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./projects/torchmole.html">
+<div class="listing-date">
+Invalid Date
+</div>
+<div class="listing-author">
+Corwin Dark
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="JavaScript,HTML,Data Visualization,GIS" data-listing-date-sort="1577854800000">
+<div class="thumbnail">
+<p><a href="./projects/arches.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./projects/arches.html">
+<h3 class="no-anchor listing-title">
+Visualizing Climate Changes in Arches National Monument
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('JavaScript'); return false;">
+JavaScript
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('HTML'); return false;">
+HTML
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Data Visualization'); return false;">
+Data Visualization
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('GIS'); return false;">
+GIS
+</div>
+</div>
+<a href="./projects/arches.html">
+<div class="listing-description">
+<p>Can we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase?</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./projects/arches.html">
 <div class="listing-date">
 Jan 1, 2020
 </div>
@@ -361,63 +406,12 @@ Corwin Dark
 </a>
 </div>
 </div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-</div>
-<div class="column-page-right">
-
-</div>
-<h3 class="anchored">
-Metalearning in Time Series Ensembles
-</h3>
-<div class="grid">
-<div class="g-col-8">
-<p>
-</p>
-<p>Can we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase?</p>
-</div>
-<div class="g-col-4">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="projects/dlensembling/image.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">xyz chart</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<h3 class="anchored">
-SEP
-</h3>
-<h3 class="anchored">
-SEP
-</h3>
-<h3 class="anchored">
-SEP
-</h3>
-<div class="column-page">
-<div class="columns">
-<div class="column" style="width:20%;">
-<p>
-</p>
-<p>Can we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase?</p>
-</div><div class="column" style="width:80%;">
-<div id="listing-project-listings2" class="quarto-listing quarto-listing-container-default">
-<div class="listing-actions-group">
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="archived,technology" data-listing-date-sort="1577854800000">
+<div class="quarto-post image-right" data-index="4" data-categories="Neural Networks,Keras,Model Validation,Time Series,ARIMA,GARCH,Regression,Financial Markets,Python" data-listing-date-sort="1577854800000">
 <div class="thumbnail">
-<p><a href="./projects/dl_example.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
+<p><a href="./projects/ensembling.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
-<a href="./projects/dl_example.html">
+<a href="./projects/ensembling.html">
 <h3 class="no-anchor listing-title">
 Archived Item 1
 </h3>
@@ -426,21 +420,236 @@ Archived Item 1
 </div>
 </a>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('archived'); return false;">
-archived
+<div class="listing-category" onclick="window.quartoListingCategory('Neural Networks'); return false;">
+Neural Networks
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('technology'); return false;">
-technology
+<div class="listing-category" onclick="window.quartoListingCategory('Keras'); return false;">
+Keras
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Model Validation'); return false;">
+Model Validation
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Time Series'); return false;">
+Time Series
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('ARIMA'); return false;">
+ARIMA
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('GARCH'); return false;">
+GARCH
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Regression'); return false;">
+Regression
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Financial Markets'); return false;">
+Financial Markets
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
+Python
 </div>
 </div>
-<a href="./projects/dl_example.html">
+<a href="./projects/ensembling.html">
 <div class="listing-description">
-
+<p>Can we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase? an we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase? an we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase? an we use deep learning models to identify market conditions where particular</p>
 </div>
 </a>
 </div>
 <div class="metadata">
-<a href="./projects/dl_example.html">
+<a href="./projects/ensembling.html">
+<div class="listing-date">
+Jan 1, 2020
+</div>
+<div class="listing-author">
+Corwin Dark
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="5" data-categories="Product Design,Entrepreneurship,Client-Server Coding,Lua,CD/CI" data-listing-date-sort="1577854800000">
+<div class="thumbnail">
+<p><a href="./projects/building_mmt.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./projects/building_mmt.html">
+<h3 class="no-anchor listing-title">
+Building an Engaging Hypercasual Roblox Game
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Product Design'); return false;">
+Product Design
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Entrepreneurship'); return false;">
+Entrepreneurship
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Client-Server Coding'); return false;">
+Client-Server Coding
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Lua'); return false;">
+Lua
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('CD/CI'); return false;">
+CD/CI
+</div>
+</div>
+<a href="./projects/building_mmt.html">
+<div class="listing-description">
+<p>Can we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase?</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./projects/building_mmt.html">
+<div class="listing-date">
+Jan 1, 2020
+</div>
+<div class="listing-author">
+Corwin Dark
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="6" data-categories="Time Series,Statistical Forecasting,ARIMA,GARCH,External Datasets,Financial Markets,R" data-listing-date-sort="1577854800000">
+<div class="thumbnail">
+<p><a href="./projects/forecasting volatility.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./projects/forecasting volatility.html">
+<h3 class="no-anchor listing-title">
+Forecasting Volatility with Nontraditional Data
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Time Series'); return false;">
+Time Series
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Statistical Forecasting'); return false;">
+Statistical Forecasting
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('ARIMA'); return false;">
+ARIMA
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('GARCH'); return false;">
+GARCH
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('External Datasets'); return false;">
+External Datasets
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Financial Markets'); return false;">
+Financial Markets
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+</div>
+<a href="./projects/forecasting volatility.html">
+<div class="listing-description">
+<p>Can we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase?</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./projects/forecasting volatility.html">
+<div class="listing-date">
+Jan 1, 2020
+</div>
+<div class="listing-author">
+Corwin Dark
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="7" data-categories="XGBoost,Random Forests,API,Naive Bayes,Python" data-listing-date-sort="1577854800000">
+<div class="thumbnail">
+<p><a href="./projects/reddit_partone.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./projects/reddit_partone.html">
+<h3 class="no-anchor listing-title">
+Boosted Trees for Reddit Comment Analysis
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('XGBoost'); return false;">
+XGBoost
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Random Forests'); return false;">
+Random Forests
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('API'); return false;">
+API
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Naive Bayes'); return false;">
+Naive Bayes
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
+Python
+</div>
+</div>
+<a href="./projects/reddit_partone.html">
+<div class="listing-description">
+<p>Evaluating the impact of</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./projects/reddit_partone.html">
+<div class="listing-date">
+Jan 1, 2020
+</div>
+<div class="listing-author">
+Corwin Dark
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="8" data-categories="Web Apps,Shiny Apps,App Deployment,Portfolio Management,R" data-listing-date-sort="1577854800000">
+<div class="thumbnail">
+<p><a href="./projects/portfolio_shinyapp.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./projects/portfolio_shinyapp.html">
+<h3 class="no-anchor listing-title">
+Automating my ETF Portfolio
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Web Apps'); return false;">
+Web Apps
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Shiny Apps'); return false;">
+Shiny Apps
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('App Deployment'); return false;">
+App Deployment
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Portfolio Management'); return false;">
+Portfolio Management
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+</div>
+<a href="./projects/portfolio_shinyapp.html">
+<div class="listing-description">
+<p>Building a ShinyApp web application to automate all of the rebalancing, tax-harvesting, and routine buying required to manage my ETF portfolio.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./projects/portfolio_shinyapp.html">
 <div class="listing-date">
 Jan 1, 2020
 </div>
@@ -453,8 +662,6 @@ Corwin Dark
 </div>
 <div class="listing-no-matching d-none">
 No matching items
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -463,107 +670,7 @@ No matching items
 
 </section>
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-project-listings3">
-<div class="listing-actions-group">
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="archived,technology" data-listing-date-sort="1577854800000">
-<div class="thumbnail">
-<p><a href="./projects/dl_example.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./projects/dl_example.html">
-<h3 class="no-anchor listing-title">
-Archived Item 1
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('archived'); return false;">
-archived
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('technology'); return false;">
-technology
-</div>
-</div>
-<a href="./projects/dl_example.html">
-<div class="listing-description">
-
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./projects/dl_example.html">
-<div class="listing-date">
-Jan 1, 2020
-</div>
-<div class="listing-author">
-Corwin Dark
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div><div class="quarto-listing quarto-listing-container-default" id="listing-project-listings4">
-<div class="listing-actions-group">
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="archived,technology" data-listing-date-sort="1577854800000">
-<div class="thumbnail">
-<p><a href="./projects/dl_example.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./projects/dl_example.html">
-<h3 class="no-anchor listing-title">
-Archived Item 1
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('archived'); return false;">
-archived
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('technology'); return false;">
-technology
-</div>
-</div>
-<a href="./projects/dl_example.html">
-<div class="listing-description">
-
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./projects/dl_example.html">
-<div class="listing-date">
-Jan 1, 2020
-</div>
-<div class="listing-author">
-Corwin Dark
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

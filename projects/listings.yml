@@ -1,6 +1,80 @@
+- title: "Driving Game Profitability with AB Tests"
+  author: Corwin Dark
+  date: 2024-10-15
+  path: "projects/ab_test.qmd"
+  categories: [AB Testing, Python]
+  image: "projects/dlensembling/image.jpg"
+  description: "Using AB tests to drive greater engagement and conversion rate throughout the funnel of a game I developed on the Roblox platform, improving return by 30%."
+
+- title: "Mining Features from Massive Comment Datasets"
+  author: Corwin Dark
+  date: Ongoing
+  path: "projects/reddit_comments.qmd"
+  categories: [PySpark, NLP, NLTK, AzureML, Sagemaker, Big Data]
+  image: "projects/dlensembling/image.jpg"
+  description: "Predicting retail trader activity through Natural Language processing across more than 700 million Reddit comments. Accomplished via PySpark, with elements of the pipeline done in both AWS and Azure ecosystems simulatenously."
+
+- title: "Encoding Atomic Environments with Pytorch"
+  author: Corwin Dark
+  date: Ongoing
+  path: "projects/torchmole.qmd"
+  categories: [PyTorch, Package Development, CD/CI, Data Visualization, Python]
+  image: "projects/dlensembling/image.jpg"
+  description: "Building a Python package (TorchMole)"
+
+- title: "Visualizing Climate Changes in Arches National Monument"
+  author: Corwin Dark
+  date: 2020-01-01
+  path: "projects/arches.qmd"
+  categories: [JavaScript, HTML, Data Visualization, GIS]
+  image: "projects/dlensembling/image.jpg"
+  description: "Can we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase?"
+
 - title: "Archived Item 1"
   author: Corwin Dark
   date: 2020-01-01
-  path: "projects/dl_example.qmd"
-  categories: [archived, technology]
+  path: "projects/ensembling.qmd"
+  categories: [Neural Networks, Keras, Model Validation, Time Series, ARIMA, GARCH, Regression, Financial Markets, Python]
   image: "projects/dlensembling/image.jpg"
+  description: "Can we use deep learning models to identify market conditions 
+  where particular statistical models are more effective? Such that the overall 
+  performance of a simple statistical ensemble will increase? an we use deep learning 
+  models to identify market conditions where particular statistical models are more effective? 
+  Such that the overall performance of a simple statistical ensemble will increase? 
+  an we use deep learning models to identify market conditions where particular statistical 
+  models are more effective? Such that the overall performance of a simple statistical ensemble 
+  will increase? an we use deep learning models to identify market conditions where particular"
+
+- title: "Building an Engaging Hypercasual Roblox Game"
+  author: Corwin Dark
+  date: 2020-01-01
+  path: "projects/building_mmt.qmd"
+  categories: [Product Design, Entrepreneurship, Client-Server Coding, Lua, CD/CI]
+  image: "projects/dlensembling/image.jpg"
+  description: "Can we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase?"
+
+- title: "Forecasting Volatility with Nontraditional Data"
+  author: Corwin Dark
+  date: 2020-01-01
+  path: "projects/forecasting volatility.qmd"
+  categories: [Time Series, Statistical Forecasting, ARIMA, GARCH, External Datasets, Financial Markets, R]
+  image: "projects/dlensembling/image.jpg"
+  description: "Can we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase?"
+
+- title: "Boosted Trees for Reddit Comment Analysis"
+  author: Corwin Dark
+  date: 2020-01-01
+  path: "projects/reddit_partone.qmd"
+  categories: [XGBoost, Random Forests, API, Naive Bayes, Python]
+  image: "projects/dlensembling/image.jpg"
+  description: "Evaluating the impact of "
+
+- title: "Automating my ETF Portfolio"
+  author: Corwin Dark
+  date: 2020-01-01
+  path: "projects/portfolio_shinyapp.qmd"
+  categories: [Web Apps, Shiny Apps, App Deployment, Portfolio Management, R]
+  image: "projects/dlensembling/image.jpg"
+  description: "Building a ShinyApp web application to automate all of the rebalancing, tax-harvesting, and routine buying required to manage my ETF portfolio."
+
+

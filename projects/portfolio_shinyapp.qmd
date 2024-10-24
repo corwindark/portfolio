@@ -1,0 +1,9 @@
+---
+title: "Data Science for Financial Markets"
+subtitle: " "
+title-block-banner: false
+format: html
+categories: [python, dataviz]
+image: projects/dlensembling/image.jpg
+---
+

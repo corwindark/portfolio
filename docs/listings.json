@@ -2,7 +2,15 @@
   {
     "listing": "/index.html",
     "items": [
-      "projects/dl_example.html"
+      "projects/ab_test.html",
+      "projects/reddit_comments.html",
+      "projects/torchmole.html",
+      "projects/arches.html",
+      "projects/ensembling.html",
+      "projects/building_mmt.html",
+      "projects/forecasting volatility.html",
+      "projects/reddit_partone.html",
+      "projects/portfolio_shinyapp.html"
     ]
   }
 ]

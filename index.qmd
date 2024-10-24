@@ -2,24 +2,11 @@
 title: "Data Science for Financial Markets"
 subtitle: " "
 title-block-banner: false
-format: html
+format: 
+    html:
+        toc: false
 listing: 
   - id: project-listings
-    contents: listings.yml
-    sort: "date"
-    categories: true
-    filter-ui: [categories]
-  - id: project-listings2
-    contents: listings.yml
-    sort: "date"
-    categories: true
-    filter-ui: [categories]
-  - id: project-listings3
-    contents: listings.yml
-    sort: "date"
-    categories: true
-    filter-ui: [categories]
-  - id: project-listings4
     contents: listings.yml
     sort: "date"
     categories: true
@@ -28,96 +15,11 @@ listing:
 
 # Selected Projects
 
-
-[![Button Click]][Link]
- 
-[![Button Hover]][Link] 
-
-
-[![Button Example]][Link]
-[![Button Example2]][Link]
-[![Button Example3]][Link]
-
-
-<!----------------------------------------------------------------------------->
-
-[Link]: # 'Link with example title.'
-     
-
-<!---------------------------------[ Buttons ]--------------------------------->
-
-[Button Example]: https://img.shields.io/badge/Title-37a779?style=for-the-badge
-
-
-[Button Example2]: https://img.shields.io/badge/Python-blue
-
-[Button Example3]: https://raw.githubusercontent.com/corwindark/portfolio/gh-pages/images/python.png
-
-[test](){.btn .btn-outline-primary data-toggle="tooltip" title="See all Python projects"}
-
-
-:::{.column-page}
-
-
+:::{.column-page-right}
 
 ::: {#project-listings}
 :::
 
-:::
-
-:::{.column-page-right}
-
-
 
 :::
 
-
-
-<h3> Metalearning in Time Series Ensembles </h3>
-::: {.grid}
-
-::: {.g-col-8}
-
-<p> </p>
-
-Can we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase?
-
-:::
-
-::: {.g-col-4} 
-
-![xyz chart](projects/dlensembling/image.jpg)
-
-:::
-
-:::
-
-
-
-
-<h3> SEP </h3>
-<h3> SEP </h3>
-<h3> SEP </h3>
-
-::: {.column-page}
-
-:::: {.columns}
-
-::: {.column width="20%"}
-
-<p> </p>
-
-Can we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase?
-
-:::
-
-::: {.column width="80%"} 
-
-::: {#project-listings2}
-:::
-
-:::
-
-::::
-
-:::
