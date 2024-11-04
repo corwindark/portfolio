@@ -1,0 +1,156 @@
+
+
+
+
+<html lang="en">
+
+
+
+<div id="bannerimage">  </div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
+    <link rel="stylesheet" href="style.css">
+    <script src = 'd3.js'></script>
+    <script src = 'https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js'></script>
+
+
+
+    <title>Climate Change in Natural Bridges</title>
+</head>
+
+
+<body style="background-color:#ece3cbff">
+
+    <div id="tooltip"></div>
+    <div id="graphic">
+        <div id="sections">
+            <section class="step">
+                <div class="title"></div>
+              
+                <br><br><br><br>
+                
+                <h2> The stone monoliths towering over the Natural Bridges National Monument are a stunning example of nature's fortitude. </h2>
+                
+                <br>
+
+                <h2> Yet data from the US Geological Survey reveals that climate change may soon change the face of this dramatic landscape. </h2>
+                
+                <p>(Note: Visualization built with D3, make sure your browser has Javascript enabled and zoom out with ctrl +/- if viewing on a small screen) </p>
+                <p>
+                <br><br><br>
+                Photo URLS clockwise from top:  utah.com, campsitephotos.com, bigvista.com
+                </p>
+
+                <br>
+                
+            </section>
+            <section class="step">
+                <p>
+                
+                <br><br><br><br><br><br><br><br>
+
+
+                <h2> USGS data covers an exhaustive 113 points within the borders of the national monument. </h2>
+                </p>
+
+            </section>
+            <section class = 'step'>
+                
+                <svg id = 'legend2' width = '0px' height = '0px'></svg><br><br>
+                <h2> Taken together, these local measurements provide comprehensive coverage of the park's varied microclimates. </h2>
+                
+            </section>
+            <section class="step">
+                <br><br><br><br><br><br>
+                <p>
+                    <h2> Forested regions are scarce and scattered throughout the monuments' geography. </h2>
+                </p>
+                
+            </section>
+            <section class="step">
+                
+                <br><br><br><br><br><br>
+                <p>
+                    <h2> Shrubland regions (consisting of shrubs, herbs, and brush), concentrate in the North and Northwest of the monument. </h2>
+                </p>
+                 
+            </section>
+            <section class="step">
+                <br><br><br><br><br><br>
+                <p>
+                    <h2> Barren areas, with little to no foliage, border the entire Northern side of the park, including many more mountainous areas. </h2>
+                </p>
+            
+            </section>
+            <section class="step">
+                <svg id = 'legend3' width = '0px' height = '0px'></svg>
+                
+                <h1> Climate Effects </h1>
+                <p>
+                    <h2> In 1980, 15 regions of the park experienced days with completely dry topsoil in summer. </h2>
+                </p>
+
+            </section>
+            <section class="step">
+                <br><br><br><br><br><br>
+                <p>
+                    <h2> In 2018, that number had grown to 20. These dry areas were especially concentrated in the park's Northeast. </h2>
+                </p>
+            
+            </section>
+            <section class="step">
+            
+                <br><br><br><br><br><br>
+                <p>
+                    <h2> In 1980, the studied regions averaged 76.5 frost days a year. </h2>
+                </p>
+
+            </section>
+            <section class="step">
+                <br><br><br><br><br><br>
+                <p>
+                    <h2> In 2018, that number had fallen dramatically to 70.4, with small losses throughout the monument. </h2>
+                <br> 
+                 <h2> Combined with the increasingly arid climate, it appears that the monument is experiencing hotter conditions over time. </h2>
+               
+                
+                </p>
+
+            
+            </section>
+            <section class="step">
+                <h1>The Future</h1>
+                
+                <h2> It is likely that 10 years from now Natural Bridges will look much different, with a hotter climate that sees fewer days with frost and more with drought.</h2>
+                <br>
+                <h2> While the rock bridges will remain, the impact of climate change will undoubtedly leave its mark, as on every corner of our planet.
+                <p>
+                   
+                    <br><br>
+                    References:
+                    <br>
+                    <a href = 'https://towardsdatascience.com/how-i-created-an-interactive-scrolling-visualisation-with-d3-js-and-how-you-can-too-e116372e2c73'>Cuthbert Chow's Medium post on scrolling visuals in D3</a>
+                    <br>
+                    <a href = 'https://github.com/YaleDHLab/pointgrid?fbclid=IwAR1z8b9er8_cMrAQEICVgf9QGPusUEq-gXE--v51ZWH3eyAitAlHDeV4n0I'>Yale DHL Lab's Pointgrid spacing plugin</a>
+
+                </p>
+                <span></span><span></span><span></span>                
+            </section>
+           
+
+        </div>
+        <div id="vis">
+
+        </div>
+    </div>
+
+    
+
+    
+    <script src = 'scroller.js'></script>
+    <script src = 'sections.js'></script>
+
+</body>
+</html>
