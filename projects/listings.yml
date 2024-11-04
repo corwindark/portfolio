@@ -25,7 +25,7 @@
 - title: "Visualizing Climate Changes in Arches National Monument"
   author: Corwin Dark
   date: 2020-01-01
-  path: "projects/arches.qmd"
+  path: "arches/arches.html"
   categories: [JavaScript, HTML, Data Visualization, GIS]
   image: "projects/dlensembling/image.jpg"
   description: "Can we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase?"

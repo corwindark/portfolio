@@ -43,5 +43,14 @@
   },
   "projects/torchmole.qmd": {
     "torchmole.html": "99ff1363"
+  },
+  "arches/data/readme.md": {
+    "readme.html": "326260e0"
+  },
+  "arches/Data Processing/Thing.ipynb": {
+    "Thing.html": "4fc2c41d"
+  },
+  "arches/Data Processing/Untitled.ipynb": {
+    "Untitled.html": "345de031"
   }
 }
