@@ -12,6 +12,8 @@ website:
         text: Portfolio
       - href: about.qmd
         text: About Me
+      - href: arch_projects/arches.html
+        text: Arches
       #- href: dlensembling.qmd
       #  text: NN Ensembling
   sidebar:
