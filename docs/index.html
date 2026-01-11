@@ -1,915 +1,1073 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>portfolio - Data Science for Financial Markets</title>
-<style>
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-  vertical-align: middle;
-}
-</style>
-
-
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./images/favicon-32x32.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
-<script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
-  "limit": 20,
-  "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
-  }
-}</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-project-listings .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-project-listings'] = new List('listing-project-listings', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corwin Dark - Data Science Portfolio</title>
+  <meta name="description" content="Corwin Dark - Data Science Portfolio. Machine learning, financial markets, and applied statistics.">
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZVECF4ZDF3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZVECF4ZDF3');
   </script>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZVECF4ZDF3"></script>
-
-<script type="text/javascript">
-
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-ZVECF4ZDF3', { 'anonymize_ip': true});
-</script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<link rel="stylesheet" href="styles.css">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Prism.js for syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  
+  <style>
+    :root {
+      /* Color palette - warm dark theme inspired by Solar */
+      --bg-primary: #0a0f14;
+      --bg-secondary: #111921;
+      --bg-tertiary: #1a2633;
+      --bg-card: #141c26;
+      --bg-card-hover: #1d2836;
+      
+      --text-primary: #e8e6e3;
+      --text-secondary: #9ca3af;
+      --text-muted: #6b7280;
+      
+      --accent-primary: #f59e0b;
+      --accent-secondary: #d97706;
+      --accent-tertiary: #92400e;
+      --accent-glow: rgba(245, 158, 11, 0.15);
+      
+      --border-color: #2a3744;
+      --border-light: #374151;
+      
+      /* Semantic colors */
+      --success: #10b981;
+      --info: #3b82f6;
+      --warning: #f59e0b;
+      
+      /* Typography */
+      --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+      
+      /* Spacing */
+      --sidebar-width: 280px;
+      --content-max-width: 900px;
+      --spacing-xs: 0.25rem;
+      --spacing-sm: 0.5rem;
+      --spacing-md: 1rem;
+      --spacing-lg: 1.5rem;
+      --spacing-xl: 2rem;
+      --spacing-2xl: 3rem;
+      
+      /* Transitions */
+      --transition-fast: 150ms ease;
+      --transition-normal: 250ms ease;
+      --transition-slow: 400ms ease;
+      
+      /* Shadows */
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
+      --shadow-glow: 0 0 20px var(--accent-glow);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Geometric background pattern */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(ellipse at 20% 20%, rgba(245, 158, 11, 0.03) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(59, 130, 246, 0.02) 0%, transparent 50%),
+        linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+      pointer-events: none;
+      z-index: -1;
+    }
+    
+    a {
+      color: var(--accent-primary);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+    
+    a:hover {
+      color: var(--accent-secondary);
+    }
+    
+    /* Navigation */
+    .nav-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 15, 20, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: var(--spacing-md) var(--spacing-xl);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .nav-logo {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+    
+    .nav-logo::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--accent-primary);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--accent-primary);
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: var(--spacing-xl);
+      list-style: none;
+    }
+    
+    .nav-links a {
+      color: var(--text-secondary);
+      font-weight: 500;
+      padding: var(--spacing-sm) 0;
+      position: relative;
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-primary);
+      transition: width var(--transition-normal);
+    }
+    
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text-primary);
+    }
+    
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+    
+    .nav-social {
+      display: flex;
+      gap: var(--spacing-md);
+    }
+    
+    .nav-social a {
+      color: var(--text-muted);
+      font-size: 1.25rem;
+      transition: color var(--transition-fast), transform var(--transition-fast);
+    }
+    
+    .nav-social a:hover {
+      color: var(--accent-primary);
+      transform: translateY(-2px);
+    }
+    
+    /* Main layout */
+    .main-layout {
+      display: flex;
+      flex: 1;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    
+    /* Sidebar */
+    .sidebar {
+      width: var(--sidebar-width);
+      padding: var(--spacing-2xl) var(--spacing-lg);
+      position: sticky;
+      top: 80px;
+      height: calc(100vh - 80px);
+      overflow-y: auto;
+      border-right: 1px solid var(--border-color);
+      transition: opacity var(--transition-normal);
+    }
+    
+    .sidebar-content {
+      text-align: center;
+    }
+    
+    .sidebar-image {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--border-color);
+      margin-bottom: var(--spacing-lg);
+      transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+    }
+    
+    .sidebar-image:hover {
+      border-color: var(--accent-primary);
+      box-shadow: var(--shadow-glow);
+    }
+    
+    .sidebar-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--accent-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    .sidebar-bio {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    
+    .sidebar-era-indicator {
+      margin-top: var(--spacing-xl);
+      padding-top: var(--spacing-lg);
+      border-top: 1px solid var(--border-color);
+    }
+    
+    .era-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--accent-primary);
+      border-radius: 50%;
+      margin-right: var(--spacing-sm);
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    
+    /* Main content */
+    .main-content {
+      flex: 1;
+      padding: var(--spacing-2xl);
+      max-width: var(--content-max-width);
+    }
+    
+    /* Intro section */
+    .intro {
+      margin-bottom: var(--spacing-2xl);
+      padding-bottom: var(--spacing-2xl);
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .intro h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: var(--spacing-md);
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .intro-text {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+    }
+    
+    /* Label filters */
+    .label-filters {
+      margin-bottom: var(--spacing-xl);
+    }
+    
+    .filter-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-sm);
+    }
+    
+    .label-filter {
+      padding: var(--spacing-xs) var(--spacing-md);
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      color: var(--text-secondary);
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    
+    .label-filter:hover {
+      border-color: var(--accent-primary);
+      color: var(--text-primary);
+    }
+    
+    .label-filter.active {
+      background: var(--accent-primary);
+      border-color: var(--accent-primary);
+      color: var(--bg-primary);
+      font-weight: 500;
+    }
+    
+    /* Projects feed */
+    .projects-feed {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-lg);
+    }
+    
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all var(--transition-normal);
+    }
+    
+    .project-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-light);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .project-card.featured {
+      border-color: var(--accent-tertiary);
+      background: linear-gradient(135deg, var(--bg-card) 0%, rgba(245, 158, 11, 0.05) 100%);
+    }
+    
+    .project-card.featured::before {
+      content: '★ Featured';
+      position: absolute;
+      top: var(--spacing-md);
+      right: var(--spacing-md);
+      background: var(--accent-primary);
+      color: var(--bg-primary);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    
+    .project-card {
+      position: relative;
+    }
+    
+    .project-link {
+      display: flex;
+      color: inherit;
+      text-decoration: none;
+    }
+    
+    .project-image {
+      width: 200px;
+      min-height: 160px;
+      flex-shrink: 0;
+      overflow: hidden;
+      background: var(--bg-tertiary);
+    }
+    
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-normal);
+    }
+    
+    .project-card:hover .project-image img {
+      transform: scale(1.05);
+    }
+    
+    .project-content {
+      padding: var(--spacing-lg);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .project-content time {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+    
+    .project-content h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: var(--spacing-xs) 0 var(--spacing-sm);
+      color: var(--text-primary);
+      transition: color var(--transition-fast);
+    }
+    
+    .project-card:hover .project-content h3 {
+      color: var(--accent-primary);
+    }
+    
+    .project-content p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    
+    .project-labels {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-xs);
+      margin-top: var(--spacing-md);
+    }
+    
+    .label {
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+    
+    /* Resume page */
+    .resume-section {
+      max-width: 900px;
+    }
+    
+    .resume-section h1 {
+      font-size: 2rem;
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    .resume-actions {
+      margin-bottom: var(--spacing-xl);
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: var(--spacing-sm) var(--spacing-lg);
+      border-radius: 8px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all var(--transition-fast);
+    }
+    
+    .btn-primary {
+      background: var(--accent-primary);
+      color: var(--bg-primary);
+    }
+    
+    .btn-primary:hover {
+      background: var(--accent-secondary);
+      color: var(--bg-primary);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .resume-embed {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    
+    .resume-embed iframe {
+      display: block;
+      border: none;
+    }
+    
+    /* Blog styles */
+    .blog-header {
+      margin-bottom: var(--spacing-2xl);
+      padding-bottom: var(--spacing-xl);
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .blog-header h1 {
+      font-size: 2rem;
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .blog-intro {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+    }
+    
+    .blog-posts {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-lg);
+    }
+    
+    .blog-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: var(--spacing-lg);
+      transition: all var(--transition-normal);
+    }
+    
+    .blog-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-light);
+      transform: translateX(4px);
+    }
+    
+    .blog-card a {
+      color: inherit;
+      text-decoration: none;
+    }
+    
+    .blog-card time {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+    
+    .series-badge {
+      display: inline-block;
+      margin-left: var(--spacing-md);
+      padding: 2px 8px;
+      background: var(--accent-tertiary);
+      color: var(--accent-primary);
+      font-size: 0.75rem;
+      font-weight: 500;
+      border-radius: 4px;
+    }
+    
+    .blog-card h3 {
+      font-size: 1.25rem;
+      margin: var(--spacing-sm) 0;
+      color: var(--text-primary);
+    }
+    
+    .blog-card:hover h3 {
+      color: var(--accent-primary);
+    }
+    
+    .blog-card p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+    
+    /* Code blocks */
+    .code-collapse {
+      margin: var(--spacing-lg) 0;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .code-collapse summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--spacing-md) var(--spacing-lg);
+      background: var(--bg-tertiary);
+      cursor: pointer;
+      user-select: none;
+      list-style: none;
+    }
+    
+    .code-collapse summary::-webkit-details-marker {
+      display: none;
+    }
+    
+    .code-title {
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    
+    .toggle-icon {
+      color: var(--text-muted);
+      transition: transform var(--transition-fast);
+    }
+    
+    .code-collapse[open] .toggle-icon {
+      transform: rotate(180deg);
+    }
+    
+    .code-content {
+      padding: 0;
+    }
+    
+    .code-content pre {
+      margin: 0;
+      border-radius: 0;
+    }
+    
+    pre {
+      background: var(--bg-secondary) !important;
+      padding: var(--spacing-lg);
+      overflow-x: auto;
+      border-radius: 8px;
+      font-size: 0.875rem;
+    }
+    
+    code {
+      font-family: var(--font-mono);
+    }
+    
+    /* Iframe container */
+    .iframe-container {
+      margin: var(--spacing-xl) 0;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--bg-secondary);
+    }
+    
+    .iframe-container iframe {
+      display: block;
+    }
+    
+    /* Footer */
+    .site-footer {
+      margin-top: auto;
+      padding: var(--spacing-xl);
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+    
+    /* Mobile responsive */
+    @media (max-width: 1024px) {
+      .sidebar {
+        display: none;
+      }
+      
+      .main-content {
+        max-width: 100%;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .nav-container {
+        padding: var(--spacing-md);
+      }
+      
+      .nav-links {
+        gap: var(--spacing-md);
+      }
+      
+      .main-content {
+        padding: var(--spacing-lg);
+      }
+      
+      .intro h1 {
+        font-size: 1.75rem;
+      }
+      
+      .project-link {
+        flex-direction: column;
+      }
+      
+      .project-image {
+        width: 100%;
+        height: 180px;
+      }
+    }
+    
+    /* Hidden class for filtering */
+    .project-card.hidden {
+      display: none;
+    }
+    
+    /* Smooth transitions for filter */
+    .project-card {
+      animation: fadeIn 0.3s ease;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
-
-<body class="nav-sidebar floating nav-fixed">
-
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">portfolio</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
- <span class="menu-text">Portfolio</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About Me</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./arch_projects/arches.html" rel="" target="">
- <span class="menu-text">Arches</span></a>
-  </li>  
-</ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
-          </div> <!-- /navcollapse -->
-      </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data Science for Financial Markets</li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/self.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
-      </a>
-      <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/corwindark" rel="" title="Check out my Github!" class="quarto-navigation-tool px-1" aria-label="Check out my Github!"><i class="bi bi-github"></i></a>
-    <a href="https://linkedin.com/in/corwindark" rel="" title="Check out my Linkedin!" class="quarto-navigation-tool px-1" aria-label="Check out my Linkedin!"><i class="bi bi-linkedin"></i></a>
-    <a href="mailto:corwindark@gmail.com" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-envelope"></i></a>
-</div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
- <span class="menu-text">Course information</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./projects/dl_example.qmd" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Overview</span></a>
-  </div>
-</li>
+<body class="home-page">
+  <header class="nav-header">
+    <nav class="nav-container">
+      <a href="index.html" class="nav-logo">Corwin Dark</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Projects</a></li>
+        <li><a href="resume.html" class="">Resume</a></li>
+        <li><a href="blog/index.html" class="">LLM Blog</a></li>
       </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(9)</span></div><div class="category" data-category="AB Testing">AB Testing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="API">API <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ARIMA">ARIMA <span class="quarto-category-count">(2)</span></div><div class="category" data-category="App Deployment">App Deployment <span class="quarto-category-count">(1)</span></div><div class="category" data-category="AzureML">AzureML <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Big Data">Big Data <span class="quarto-category-count">(1)</span></div><div class="category" data-category="CD/CI">CD/CI <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Client-Server Coding">Client-Server Coding <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Data Visualization">Data Visualization <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Entrepreneurship">Entrepreneurship <span class="quarto-category-count">(1)</span></div><div class="category" data-category="External Datasets">External Datasets <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Financial Markets">Financial Markets <span class="quarto-category-count">(2)</span></div><div class="category" data-category="GARCH">GARCH <span class="quarto-category-count">(2)</span></div><div class="category" data-category="GIS">GIS <span class="quarto-category-count">(1)</span></div><div class="category" data-category="HTML">HTML <span class="quarto-category-count">(1)</span></div><div class="category" data-category="JavaScript">JavaScript <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Keras">Keras <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Lua">Lua <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Model Validation">Model Validation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="NLP">NLP <span class="quarto-category-count">(1)</span></div><div class="category" data-category="NLTK">NLTK <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Naive Bayes">Naive Bayes <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Neural Networks">Neural Networks <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Package Development">Package Development <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Portfolio Management">Portfolio Management <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Product Design">Product Design <span class="quarto-category-count">(1)</span></div><div class="category" data-category="PySpark">PySpark <span class="quarto-category-count">(1)</span></div><div class="category" data-category="PyTorch">PyTorch <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Python">Python <span class="quarto-category-count">(4)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Random Forests">Random Forests <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Regression">Regression <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Sagemaker">Sagemaker <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Shiny Apps">Shiny Apps <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Statistical Forecasting">Statistical Forecasting <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Time Series">Time Series <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Web Apps">Web Apps <span class="quarto-category-count">(1)</span></div><div class="category" data-category="XGBoost">XGBoost <span class="quarto-category-count">(1)</span></div></div></div>
-<!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Data Science for Financial Markets</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
+      <div class="nav-social">
+        <a href="https://github.com/corwindark" target="_blank" rel="noopener" title="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/corwindark" target="_blank" rel="noopener" title="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <a href="mailto:corwindark@gmail.com" title="Email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
+        </a>
+      </div>
+    </nav>
+  </header>
   
+  <div class="main-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-content">
+        <img src="assets/images/self.png" alt="Corwin Dark" class="sidebar-image" id="sidebar-image">
+        <p class="sidebar-title" id="sidebar-title">Present Day</p>
+        <p class="sidebar-bio" id="sidebar-bio">Currently focused on data science and machine learning applications in financial markets.</p>
+        <div class="sidebar-era-indicator">
+          <span class="era-dot"></span>
+          <span id="current-era">2024</span>
+        </div>
+      </div>
+    </aside>
     
-  </div>
-  
-
-</header>
-
-<section id="selected-projects" class="level1 page-columns page-full">
-<h1>Selected Projects</h1>
-<div class="column-page-right">
-<div id="listing-project-listings" class="quarto-listing quarto-listing-container-default">
-<div class="listing-actions-group">
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="AB Testing,Python" data-listing-date-sort="1728964800000">
-<div class="thumbnail">
-<p><a href="./projects/ab_test.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./projects/ab_test.html">
-<h3 class="no-anchor listing-title" data-anchor-id="selected-projects">
-Driving Game Profitability with AB Tests
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('AB Testing'); return false;">
-AB Testing
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
-Python
-</div>
-</div>
-<a href="./projects/ab_test.html">
-<div class="listing-description">
-<p>Using AB tests to drive greater engagement and conversion rate throughout the funnel of a game I developed on the Roblox platform, improving return by 30%.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./projects/ab_test.html">
-<div class="listing-date">
-Oct 15, 2024
-</div>
-<div class="listing-author">
-Corwin Dark
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="PySpark,NLP,NLTK,AzureML,Sagemaker,Big Data" data-listing-date-sort="NaN">
-<div class="thumbnail">
-<p><a href="./projects/reddit_comments.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./projects/reddit_comments.html">
-<h3 class="no-anchor listing-title">
-Mining Features from Massive Comment Datasets
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('PySpark'); return false;">
-PySpark
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('NLP'); return false;">
-NLP
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('NLTK'); return false;">
-NLTK
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('AzureML'); return false;">
-AzureML
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Sagemaker'); return false;">
-Sagemaker
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Big Data'); return false;">
-Big Data
-</div>
-</div>
-<a href="./projects/reddit_comments.html">
-<div class="listing-description">
-<p>Predicting retail trader activity through Natural Language processing across more than 700 million Reddit comments. Accomplished via PySpark, with elements of the pipeline done in both AWS and Azure ecosystems simulatenously.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./projects/reddit_comments.html">
-<div class="listing-date">
-Invalid Date
-</div>
-<div class="listing-author">
-Corwin Dark
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="PyTorch,Package Development,CD/CI,Data Visualization,Python" data-listing-date-sort="NaN">
-<div class="thumbnail">
-<p><a href="./projects/torchmole.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./projects/torchmole.html">
-<h3 class="no-anchor listing-title">
-Encoding Atomic Environments with Pytorch
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('PyTorch'); return false;">
-PyTorch
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Package Development'); return false;">
-Package Development
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('CD/CI'); return false;">
-CD/CI
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Data Visualization'); return false;">
-Data Visualization
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
-Python
-</div>
-</div>
-<a href="./projects/torchmole.html">
-<div class="listing-description">
-<p>Building a Python package (TorchMole)</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./projects/torchmole.html">
-<div class="listing-date">
-Invalid Date
-</div>
-<div class="listing-author">
-Corwin Dark
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="JavaScript,HTML,Data Visualization,GIS" data-listing-date-sort="1577854800000">
-<div class="thumbnail">
-<p><a href="arch_projects/arches.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="arch_projects/arches.html">
-<h3 class="no-anchor listing-title">
-Visualizing Climate Changes in Arches National Monument
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('JavaScript'); return false;">
-JavaScript
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('HTML'); return false;">
-HTML
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Data Visualization'); return false;">
-Data Visualization
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('GIS'); return false;">
-GIS
-</div>
-</div>
-<a href="arch_projects/arches.html">
-<div class="listing-description">
-<p>Can we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase?</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="arch_projects/arches.html">
-<div class="listing-date">
-Jan 1, 2020
-</div>
-<div class="listing-author">
-Corwin Dark
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="Neural Networks,Keras,Model Validation,Time Series,ARIMA,GARCH,Regression,Financial Markets,Python" data-listing-date-sort="1577854800000">
-<div class="thumbnail">
-<p><a href="./projects/ensembling.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./projects/ensembling.html">
-<h3 class="no-anchor listing-title">
-Archived Item 1
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Neural Networks'); return false;">
-Neural Networks
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Keras'); return false;">
-Keras
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Model Validation'); return false;">
-Model Validation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Time Series'); return false;">
-Time Series
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('ARIMA'); return false;">
-ARIMA
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('GARCH'); return false;">
-GARCH
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Regression'); return false;">
-Regression
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Financial Markets'); return false;">
-Financial Markets
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
-Python
-</div>
-</div>
-<a href="./projects/ensembling.html">
-<div class="listing-description">
-<p>Can we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase? an we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase? an we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase? an we use deep learning models to identify market conditions where particular</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./projects/ensembling.html">
-<div class="listing-date">
-Jan 1, 2020
-</div>
-<div class="listing-author">
-Corwin Dark
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="Product Design,Entrepreneurship,Client-Server Coding,Lua,CD/CI" data-listing-date-sort="1577854800000">
-<div class="thumbnail">
-<p><a href="./projects/building_mmt.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./projects/building_mmt.html">
-<h3 class="no-anchor listing-title">
-Building an Engaging Hypercasual Roblox Game
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Product Design'); return false;">
-Product Design
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Entrepreneurship'); return false;">
-Entrepreneurship
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Client-Server Coding'); return false;">
-Client-Server Coding
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Lua'); return false;">
-Lua
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('CD/CI'); return false;">
-CD/CI
-</div>
-</div>
-<a href="./projects/building_mmt.html">
-<div class="listing-description">
-<p>Can we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase?</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./projects/building_mmt.html">
-<div class="listing-date">
-Jan 1, 2020
-</div>
-<div class="listing-author">
-Corwin Dark
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="Time Series,Statistical Forecasting,ARIMA,GARCH,External Datasets,Financial Markets,R" data-listing-date-sort="1577854800000">
-<div class="thumbnail">
-<p><a href="./projects/forecasting volatility.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./projects/forecasting volatility.html">
-<h3 class="no-anchor listing-title">
-Forecasting Volatility with Nontraditional Data
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Time Series'); return false;">
-Time Series
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Statistical Forecasting'); return false;">
-Statistical Forecasting
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('ARIMA'); return false;">
-ARIMA
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('GARCH'); return false;">
-GARCH
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('External Datasets'); return false;">
-External Datasets
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Financial Markets'); return false;">
-Financial Markets
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
-</div>
-</div>
-<a href="./projects/forecasting volatility.html">
-<div class="listing-description">
-<p>Can we use deep learning models to identify market conditions where particular statistical models are more effective? Such that the overall performance of a simple statistical ensemble will increase?</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./projects/forecasting volatility.html">
-<div class="listing-date">
-Jan 1, 2020
-</div>
-<div class="listing-author">
-Corwin Dark
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="XGBoost,Random Forests,API,Naive Bayes,Python" data-listing-date-sort="1577854800000">
-<div class="thumbnail">
-<p><a href="./projects/reddit_partone.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./projects/reddit_partone.html">
-<h3 class="no-anchor listing-title">
-Boosted Trees for Reddit Comment Analysis
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('XGBoost'); return false;">
-XGBoost
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Random Forests'); return false;">
-Random Forests
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('API'); return false;">
-API
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Naive Bayes'); return false;">
-Naive Bayes
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
-Python
-</div>
-</div>
-<a href="./projects/reddit_partone.html">
-<div class="listing-description">
-<p>Evaluating the impact of</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./projects/reddit_partone.html">
-<div class="listing-date">
-Jan 1, 2020
-</div>
-<div class="listing-author">
-Corwin Dark
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="8" data-categories="Web Apps,Shiny Apps,App Deployment,Portfolio Management,R" data-listing-date-sort="1577854800000">
-<div class="thumbnail">
-<p><a href="./projects/portfolio_shinyapp.html"> <img src="projects/dlensembling/image.jpg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./projects/portfolio_shinyapp.html">
-<h3 class="no-anchor listing-title">
-Automating my ETF Portfolio
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Web Apps'); return false;">
-Web Apps
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Shiny Apps'); return false;">
-Shiny Apps
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('App Deployment'); return false;">
-App Deployment
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Portfolio Management'); return false;">
-Portfolio Management
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
-</div>
-</div>
-<a href="./projects/portfolio_shinyapp.html">
-<div class="listing-description">
-<p>Building a ShinyApp web application to automate all of the rebalancing, tax-harvesting, and routine buying required to manage my ETF portfolio.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./projects/portfolio_shinyapp.html">
-<div class="listing-date">
-Jan 1, 2020
-</div>
-<div class="listing-author">
-Corwin Dark
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-</div>
-
-
-
+    <main class="main-content">
+      
+<section class="intro">
+  <h1>Data Science for Financial Markets</h1>
+  <p class="intro-text">I'm Corwin Dark, a data scientist focused on applying machine learning and statistical methods to financial markets. Browse my projects below to see my work in action.</p>
 </section>
 
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
+<section class="label-filters">
+  <div class="filter-container">
+    <button class="label-filter active" data-filter="all">All Projects</button>
+<button class="label-filter" data-filter="AB Testing">AB Testing</button>
+<button class="label-filter" data-filter="API">API</button>
+<button class="label-filter" data-filter="ARIMA">ARIMA</button>
+<button class="label-filter" data-filter="AzureML">AzureML</button>
+<button class="label-filter" data-filter="Big Data">Big Data</button>
+<button class="label-filter" data-filter="CI/CD">CI/CD</button>
+<button class="label-filter" data-filter="D3.js">D3.js</button>
+<button class="label-filter" data-filter="Data Visualization">Data Visualization</button>
+<button class="label-filter" data-filter="Deep Learning">Deep Learning</button>
+<button class="label-filter" data-filter="Entrepreneurship">Entrepreneurship</button>
+<button class="label-filter" data-filter="Financial Markets">Financial Markets</button>
+<button class="label-filter" data-filter="GARCH">GARCH</button>
+<button class="label-filter" data-filter="GIS">GIS</button>
+<button class="label-filter" data-filter="JavaScript">JavaScript</button>
+<button class="label-filter" data-filter="Keras">Keras</button>
+<button class="label-filter" data-filter="Lua">Lua</button>
+<button class="label-filter" data-filter="NLP">NLP</button>
+<button class="label-filter" data-filter="NLTK">NLTK</button>
+<button class="label-filter" data-filter="Naive Bayes">Naive Bayes</button>
+<button class="label-filter" data-filter="Neural Networks">Neural Networks</button>
+<button class="label-filter" data-filter="Package Development">Package Development</button>
+<button class="label-filter" data-filter="Portfolio Management">Portfolio Management</button>
+<button class="label-filter" data-filter="Product Design">Product Design</button>
+<button class="label-filter" data-filter="PySpark">PySpark</button>
+<button class="label-filter" data-filter="PyTorch">PyTorch</button>
+<button class="label-filter" data-filter="Python">Python</button>
+<button class="label-filter" data-filter="R">R</button>
+<button class="label-filter" data-filter="Random Forests">Random Forests</button>
+<button class="label-filter" data-filter="Sagemaker">Sagemaker</button>
+<button class="label-filter" data-filter="Shiny">Shiny</button>
+<button class="label-filter" data-filter="Time Series">Time Series</button>
+<button class="label-filter" data-filter="Transformers">Transformers</button>
+<button class="label-filter" data-filter="Web Apps">Web Apps</button>
+<button class="label-filter" data-filter="XGBoost">XGBoost</button>
+  </div>
+</section>
+
+<section class="projects-feed">
+  
+<article class="project-card featured" data-year="2024" data-labels="PyTorch,Transformers,NLP,Deep Learning">
+  <a href="blog/index.html" class="project-link">
+    <div class="project-image">
+      <img src="assets/images/llm-preview.jpg" alt="Building a Foundation LLM from Scratch" loading="lazy" onerror="this.src='assets/images/placeholder.jpg'">
+    </div>
+    <div class="project-content">
+      <time datetime="2025-01-01">December 2024</time>
+      <h3>Building a Foundation LLM from Scratch</h3>
+      <p>A blog series documenting my journey building a simple foundation language model from the ground up.</p>
+      <div class="project-labels"><span class="label" data-label="PyTorch">PyTorch</span><span class="label" data-label="Transformers">Transformers</span><span class="label" data-label="NLP">NLP</span><span class="label" data-label="Deep Learning">Deep Learning</span></div>
+    </div>
+  </a>
+</article>
+
+<article class="project-card featured" data-year="2024" data-labels="AB Testing,Python">
+  <a href="projects/ab-test.html" class="project-link">
+    <div class="project-image">
+      <img src="assets/images/ab-test-preview.jpg" alt="Driving Game Profitability with AB Tests" loading="lazy" onerror="this.src='assets/images/placeholder.jpg'">
+    </div>
+    <div class="project-content">
+      <time datetime="2024-10-15">October 2024</time>
+      <h3>Driving Game Profitability with AB Tests</h3>
+      <p>Using AB tests to drive greater engagement and conversion rate throughout the funnel of a game I developed on the Roblox platform, improving return by 30%.</p>
+      <div class="project-labels"><span class="label" data-label="AB Testing">AB Testing</span><span class="label" data-label="Python">Python</span></div>
+    </div>
+  </a>
+</article>
+
+<article class="project-card " data-year="2024" data-labels="PySpark,NLP,NLTK,AzureML,Sagemaker,Big Data">
+  <a href="projects/reddit-comments.html" class="project-link">
+    <div class="project-image">
+      <img src="assets/images/reddit-preview.jpg" alt="Mining Features from Massive Comment Datasets" loading="lazy" onerror="this.src='assets/images/placeholder.jpg'">
+    </div>
+    <div class="project-content">
+      <time datetime="2024-08-01">July 2024</time>
+      <h3>Mining Features from Massive Comment Datasets</h3>
+      <p>Predicting retail trader activity through Natural Language processing across more than 700 million Reddit comments. Accomplished via PySpark, with elements of the pipeline done in both AWS and Azure ecosystems simultaneously.</p>
+      <div class="project-labels"><span class="label" data-label="PySpark">PySpark</span><span class="label" data-label="NLP">NLP</span><span class="label" data-label="NLTK">NLTK</span><span class="label" data-label="AzureML">AzureML</span><span class="label" data-label="Sagemaker">Sagemaker</span><span class="label" data-label="Big Data">Big Data</span></div>
+    </div>
+  </a>
+</article>
+
+<article class="project-card " data-year="2024" data-labels="PyTorch,Package Development,CI/CD,Data Visualization,Python">
+  <a href="projects/torchmole.html" class="project-link">
+    <div class="project-image">
+      <img src="assets/images/torchmole-preview.jpg" alt="Encoding Atomic Environments with PyTorch" loading="lazy" onerror="this.src='assets/images/placeholder.jpg'">
+    </div>
+    <div class="project-content">
+      <time datetime="2024-06-01">May 2024</time>
+      <h3>Encoding Atomic Environments with PyTorch</h3>
+      <p>Building TorchMole, a Python package for encoding atomic environments using graph neural networks.</p>
+      <div class="project-labels"><span class="label" data-label="PyTorch">PyTorch</span><span class="label" data-label="Package Development">Package Development</span><span class="label" data-label="CI/CD">CI/CD</span><span class="label" data-label="Data Visualization">Data Visualization</span><span class="label" data-label="Python">Python</span></div>
+    </div>
+  </a>
+</article>
+
+<article class="project-card " data-year="2022" data-labels="Product Design,Entrepreneurship,Lua,CI/CD">
+  <a href="projects/building-mmt.html" class="project-link">
+    <div class="project-image">
+      <img src="assets/images/mmt-preview.jpg" alt="Building an Engaging Hypercasual Roblox Game" loading="lazy" onerror="this.src='assets/images/placeholder.jpg'">
+    </div>
+    <div class="project-content">
+      <time datetime="2022-03-01">February 2022</time>
+      <h3>Building an Engaging Hypercasual Roblox Game</h3>
+      <p>Designing and developing a hypercasual game on the Roblox platform, focusing on engagement metrics and monetization strategies.</p>
+      <div class="project-labels"><span class="label" data-label="Product Design">Product Design</span><span class="label" data-label="Entrepreneurship">Entrepreneurship</span><span class="label" data-label="Lua">Lua</span><span class="label" data-label="CI/CD">CI/CD</span></div>
+    </div>
+  </a>
+</article>
+
+<article class="project-card " data-year="2021" data-labels="Neural Networks,Keras,Time Series,ARIMA,GARCH,Financial Markets,Python">
+  <a href="projects/ensembling.html" class="project-link">
+    <div class="project-image">
+      <img src="assets/images/ensembling-preview.jpg" alt="Metalearning in Time Series Ensembles" loading="lazy" onerror="this.src='assets/images/placeholder.jpg'">
+    </div>
+    <div class="project-content">
+      <time datetime="2021-06-01">May 2021</time>
+      <h3>Metalearning in Time Series Ensembles</h3>
+      <p>Can we use deep learning models to identify market conditions where particular statistical models are more effective? Improving ensemble performance through intelligent model selection.</p>
+      <div class="project-labels"><span class="label" data-label="Neural Networks">Neural Networks</span><span class="label" data-label="Keras">Keras</span><span class="label" data-label="Time Series">Time Series</span><span class="label" data-label="ARIMA">ARIMA</span><span class="label" data-label="GARCH">GARCH</span><span class="label" data-label="Financial Markets">Financial Markets</span><span class="label" data-label="Python">Python</span></div>
+    </div>
+  </a>
+</article>
+
+<article class="project-card " data-year="2020" data-labels="Time Series,ARIMA,GARCH,Financial Markets,R">
+  <a href="projects/forecasting-volatility.html" class="project-link">
+    <div class="project-image">
+      <img src="assets/images/volatility-preview.jpg" alt="Forecasting Volatility with Nontraditional Data" loading="lazy" onerror="this.src='assets/images/placeholder.jpg'">
+    </div>
+    <div class="project-content">
+      <time datetime="2021-01-01">December 2020</time>
+      <h3>Forecasting Volatility with Nontraditional Data</h3>
+      <p>Applying statistical forecasting methods with external datasets to predict market volatility.</p>
+      <div class="project-labels"><span class="label" data-label="Time Series">Time Series</span><span class="label" data-label="ARIMA">ARIMA</span><span class="label" data-label="GARCH">GARCH</span><span class="label" data-label="Financial Markets">Financial Markets</span><span class="label" data-label="R">R</span></div>
+    </div>
+  </a>
+</article>
+
+<article class="project-card " data-year="2020" data-labels="XGBoost,Random Forests,API,Naive Bayes,Python">
+  <a href="projects/reddit-partone.html" class="project-link">
+    <div class="project-image">
+      <img src="assets/images/reddit-trees-preview.jpg" alt="Boosted Trees for Reddit Comment Analysis" loading="lazy" onerror="this.src='assets/images/placeholder.jpg'">
+    </div>
+    <div class="project-content">
+      <time datetime="2020-06-01">May 2020</time>
+      <h3>Boosted Trees for Reddit Comment Analysis</h3>
+      <p>Evaluating the impact of Reddit sentiment on market movements using gradient boosted trees and ensemble methods.</p>
+      <div class="project-labels"><span class="label" data-label="XGBoost">XGBoost</span><span class="label" data-label="Random Forests">Random Forests</span><span class="label" data-label="API">API</span><span class="label" data-label="Naive Bayes">Naive Bayes</span><span class="label" data-label="Python">Python</span></div>
+    </div>
+  </a>
+</article>
+
+<article class="project-card " data-year="2020" data-labels="Shiny,R,Web Apps,Portfolio Management">
+  <a href="projects/portfolio-shinyapp.html" class="project-link">
+    <div class="project-image">
+      <img src="assets/images/shiny-preview.jpg" alt="Automating my ETF Portfolio" loading="lazy" onerror="this.src='assets/images/placeholder.jpg'">
+    </div>
+    <div class="project-content">
+      <time datetime="2020-03-01">February 2020</time>
+      <h3>Automating my ETF Portfolio</h3>
+      <p>Building a ShinyApp web application to automate all of the rebalancing, tax-harvesting, and routine buying required to manage my ETF portfolio.</p>
+      <div class="project-labels"><span class="label" data-label="Shiny">Shiny</span><span class="label" data-label="R">R</span><span class="label" data-label="Web Apps">Web Apps</span><span class="label" data-label="Portfolio Management">Portfolio Management</span></div>
+    </div>
+  </a>
+</article>
+
+<article class="project-card " data-year="2019" data-labels="JavaScript,D3.js,Data Visualization,GIS">
+  <a href="arch_projects/arches.html" class="project-link">
+    <div class="project-image">
+      <img src="assets/images/arches-preview.png" alt="Visualizing Climate Changes in Arches National Monument" loading="lazy" onerror="this.src='assets/images/placeholder.jpg'">
+    </div>
+    <div class="project-content">
+      <time datetime="2020-01-01">December 2019</time>
+      <h3>Visualizing Climate Changes in Arches National Monument</h3>
+      <p>Interactive scrollytelling visualization exploring climate change impacts on Natural Bridges National Monument using D3.js.</p>
+      <div class="project-labels"><span class="label" data-label="JavaScript">JavaScript</span><span class="label" data-label="D3.js">D3.js</span><span class="label" data-label="Data Visualization">Data Visualization</span><span class="label" data-label="GIS">GIS</span></div>
+    </div>
+  </a>
+</article>
+</section>
+
+    </main>
+  </div>
+  
+  <footer class="site-footer">
+    <p>&copy; 2025 Corwin Dark. Built with vanilla HTML, CSS, and JavaScript.</p>
+  </footer>
+  
+  <!-- Prism.js for syntax highlighting -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-r.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-lua.min.js"></script>
+  
+  <script>
+const SIDEBAR_ERAS = {
+  "2020": {
+    "image": "self-2020.png",
+    "title": "2020-2021",
+    "bio": "International development consulting, applying data science to economic and social challenges."
+  },
+  "2022": {
+    "image": "self-2022.png",
+    "title": "2022-2023",
+    "bio": "Explored game development and product design while building data pipelines at scale."
+  },
+  "2024": {
+    "image": "self-2024.png",
+    "title": "Present Day",
+    "bio": "Currently focused on data science and machine learning applications in financial markets."
   }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  });
-  function tippyHover(el, contentFn) {
-    const config = {
-      allowHTML: true,
-      content: contentFn,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start'
-    };
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      return note.innerHTML;
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
-      });
-    }
-  }
-});
+};
 </script>
-</div> <!-- /content -->
+  
+  <script>
+    // Label filtering
+    document.querySelectorAll('.label-filter').forEach(button => {
+      button.addEventListener('click', function() {
+        const filter = this.dataset.filter;
+        
+        // Update active state
+        document.querySelectorAll('.label-filter').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Filter projects
+        document.querySelectorAll('.project-card').forEach(card => {
+          if (filter === 'all') {
+            card.classList.remove('hidden');
+          } else {
+            const labels = card.dataset.labels.split(',');
+            if (labels.includes(filter)) {
+              card.classList.remove('hidden');
+            } else {
+              card.classList.add('hidden');
+            }
+          }
+        });
+      });
+    });
+    
+    // Scroll-aware sidebar (only on home page)
+    if (typeof SIDEBAR_ERAS !== 'undefined' && document.querySelector('.home-page')) {
+      const sidebarImage = document.getElementById('sidebar-image');
+      const sidebarTitle = document.getElementById('sidebar-title');
+      const sidebarBio = document.getElementById('sidebar-bio');
+      const currentEraSpan = document.getElementById('current-era');
+      
+      // Create intersection observers for each project card
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const year = entry.target.dataset.year;
+            updateSidebar(year);
+          }
+        });
+      }, { 
+        threshold: 0.5,
+        rootMargin: '-100px 0px -50% 0px'
+      });
+      
+      document.querySelectorAll('.project-card').forEach(card => {
+        observer.observe(card);
+      });
+      
+      function updateSidebar(year) {
+        // Find the closest era
+        const eras = Object.keys(SIDEBAR_ERAS).map(Number).sort((a, b) => b - a);
+        let selectedEra = eras[eras.length - 1];
+        
+        for (const era of eras) {
+          if (parseInt(year) >= era) {
+            selectedEra = era;
+            break;
+          }
+        }
+        
+        const eraData = SIDEBAR_ERAS[selectedEra];
+        if (eraData) {
+          sidebarImage.src = `assets/images/${eraData.image}`;
+          sidebarTitle.textContent = eraData.title;
+          sidebarBio.textContent = eraData.bio;
+          currentEraSpan.textContent = selectedEra;
+        }
+      }
+    }
+    
+    // Highlight code on page load
+    if (typeof Prism !== 'undefined') {
+      Prism.highlightAll();
+    }
+  </script>
+</body>
+</html>
 
-
-
-</body></html>
