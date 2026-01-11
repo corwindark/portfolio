@@ -1,0 +1,35 @@
+[
+  {
+    "id": "current",
+    "year": "2024-Present",
+    "logo": null,
+    "title": "Independent",
+    "description": "Data science & ML for financial markets",
+    "startYear": 2024
+  },
+  {
+    "id": "roblox",
+    "year": "2022-2024",
+    "logo": null,
+    "title": "Game Development",
+    "description": "Product design & data pipelines",
+    "startYear": 2022
+  },
+  {
+    "id": "consulting",
+    "year": "2020-2021",
+    "logo": null,
+    "title": "Consulting",
+    "description": "International development & data science",
+    "startYear": 2020
+  },
+  {
+    "id": "usaid",
+    "year": "2019",
+    "logo": "logos/usaid.png",
+    "title": "Forecasting Intern, USAID",
+    "description": "Data visualization & GIS",
+    "startYear": 2019
+  }
+]
+

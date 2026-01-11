@@ -314,10 +314,12 @@ portfolio/
 │   │   ├── project.html        # Individual project template
 │   │   └── blog-post.html      # Blog post template
 │   ├── data/
-│   │   ├── projects.json       # Project metadata
-│   │   ├── sidebar-eras.json   # Timeline sidebar content
-│   │   └── resume.pdf          # Your resume PDF
+│   │   ├── projects.json         # Project metadata
+│   │   ├── sidebar-timeline.json # Timeline sidebar config (logos, dates, titles)
+│   │   └── resume.pdf            # Your resume PDF
 │   └── assets/
+│       └── images/
+│           └── logos/            # Company/school logo images for timeline
 │       ├── images/             # Static images
 │       └── gifs/               # Animated GIFs
 ├── docs/                       # Generated site (don't edit directly!)
@@ -328,28 +330,118 @@ portfolio/
 
 ---
 
-## Updating the Timeline Sidebar
+## Configuring the Sidebar Timeline
 
-The sidebar shows different content as users scroll through projects from different time periods.
+The sidebar displays a vertical timeline with logos/icons for each era of your career or education. As users scroll through projects, the corresponding timeline entry is highlighted.
 
-Edit `src/data/sidebar-eras.json`:
+### Timeline Configuration File
+
+Edit `src/data/sidebar-timeline.json`:
 
 ```json
-{
-  "2024": {
-    "image": "self-2024.png",
-    "title": "Present Day",
-    "bio": "Currently working on X at Company Y..."
+[
+  {
+    "id": "current",
+    "year": "2024-Present",
+    "logo": "logos/company-logo.png",
+    "title": "Company Name",
+    "description": "Brief role description",
+    "startYear": 2024
   },
-  "2022": {
-    "image": "self-2022.png",
-    "title": "2022-2023",
-    "bio": "During this period I worked on..."
+  {
+    "id": "previous",
+    "year": "2022-2024",
+    "logo": "logos/another-logo.png",
+    "title": "Previous Company",
+    "description": "What you worked on",
+    "startYear": 2022
   }
-}
+]
 ```
 
-The sidebar will show the era that matches the year of projects currently visible on screen.
+### Field Reference
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| `id` | Yes | Unique identifier for this entry |
+| `year` | Yes | Display text for the year/date range (e.g., "2024-Present", "2022-2024", "2019") |
+| `logo` | No | Path to logo image relative to `assets/images/` (e.g., "logos/google.png"). Falls back to a dot if missing. |
+| `title` | Yes | Company, school, or role name |
+| `description` | No | Brief description of your role or focus |
+| `startYear` | Yes | Numeric year used to match projects to this timeline entry (e.g., 2024). Projects from this year onwards will highlight this entry. |
+
+### Adding Logo Images
+
+1. Create logo images (recommended: 96x96 pixels, PNG or SVG)
+2. Place them in `src/assets/images/logos/`
+3. Reference in the timeline config: `"logo": "logos/your-logo.png"`
+
+**Tips for logos:**
+- Use transparent backgrounds for best results
+- Square images work best (they're displayed in a circle)
+- Keep file sizes small (<50KB)
+- If no logo is available, omit the `logo` field for a simple dot marker
+
+### Entry Order and Spacing
+
+- **Order:** Entries appear in the order listed in the JSON array (top to bottom)
+- **Recommended order:** Most recent first (chronological descending)
+- **Spacing:** Each entry gets equal visual weight; use descriptions to add context
+
+### How Project Matching Works
+
+When a user scrolls through projects, the timeline highlights based on `startYear`:
+
+1. Each project has a `date` field (e.g., "2023-06-15")
+2. The system finds the timeline entry whose `startYear` is closest to (but not greater than) the project year
+3. That timeline entry becomes "active" (highlighted)
+
+**Example:**
+- Timeline entry with `startYear: 2022` will match projects from 2022, 2023, etc.
+- Timeline entry with `startYear: 2024` will match projects from 2024 onwards
+
+### Clicking Timeline Entries
+
+Users can click any timeline entry to scroll to the first project from that era. This provides quick navigation through your portfolio by time period.
+
+### Example: Full Timeline
+
+```json
+[
+  {
+    "id": "independent",
+    "year": "2024-Present",
+    "logo": "logos/self.png",
+    "title": "Independent Consultant",
+    "description": "ML for financial markets",
+    "startYear": 2024
+  },
+  {
+    "id": "bigtech",
+    "year": "2021-2024",
+    "logo": "logos/bigtech.png",
+    "title": "Big Tech Company",
+    "description": "Data science & analytics",
+    "startYear": 2021
+  },
+  {
+    "id": "startup",
+    "year": "2019-2021",
+    "logo": "logos/startup.png",
+    "title": "Cool Startup",
+    "description": "Full-stack data engineering",
+    "startYear": 2019
+  },
+  {
+    "id": "university",
+    "year": "2015-2019",
+    "logo": "logos/university.png",
+    "title": "State University",
+    "description": "BS Computer Science",
+    "startYear": 2015
+  }
+]
+```
 
 ---
 

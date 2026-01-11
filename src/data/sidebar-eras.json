@@ -1,18 +1,39 @@
 {
-  "2024": {
+  "2025": {
     "image": "self-2024.png",
     "title": "Present Day",
-    "bio": "Currently focused on data science and machine learning applications in financial markets."
+    "bio": "Currently focused on data science and machine learning applications in financial markets.",
+    "yearDescription": "Building LLMs and exploring deep learning architectures"
+  },
+  "2024": {
+    "image": "self-2024.png",
+    "title": "2024",
+    "bio": "Currently focused on data science and machine learning applications in financial markets.",
+    "yearDescription": "AB testing, NLP at scale, and PyTorch development"
   },
   "2022": {
     "image": "self-2022.png",
     "title": "2022-2023",
-    "bio": "Explored game development and product design while building data pipelines at scale."
+    "bio": "Explored game development and product design while building data pipelines at scale.",
+    "yearDescription": "Game development and product design"
+  },
+  "2021": {
+    "image": "self-2020.png",
+    "title": "2021",
+    "bio": "Deep learning research and time series forecasting.",
+    "yearDescription": "Time series forecasting and ensemble methods"
   },
   "2020": {
     "image": "self-2020.png",
-    "title": "2020-2021",
-    "bio": "International development consulting, applying data science to economic and social challenges."
+    "title": "2020",
+    "bio": "International development consulting, applying data science to economic and social challenges.",
+    "yearDescription": "NLP, web apps, and financial analysis"
+  },
+  "2019": {
+    "image": "self-2020.png",
+    "title": "2019",
+    "bio": "Data visualization and interactive storytelling.",
+    "yearDescription": "Interactive data visualization with D3.js"
   }
 }
 

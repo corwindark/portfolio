@@ -359,6 +359,109 @@
       gap: var(--spacing-lg);
     }
     
+    /* Sidebar Timeline */
+    .sidebar-timeline {
+      position: relative;
+      margin-top: var(--spacing-xl);
+      padding-top: var(--spacing-lg);
+      border-top: 1px solid var(--border-color);
+    }
+    
+    .timeline-track {
+      position: absolute;
+      left: 23px;
+      top: var(--spacing-lg);
+      bottom: 0;
+      width: 2px;
+      background: var(--border-color);
+    }
+    
+    .timeline-item {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: var(--spacing-md);
+      padding-bottom: var(--spacing-lg);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+    
+    .timeline-logo {
+      position: relative;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--bg-tertiary);
+      border: 2px solid var(--border-color);
+      overflow: hidden;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-fast);
+      z-index: 1;
+    }
+    
+    .timeline-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .timeline-logo-placeholder {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+    }
+    
+    .timeline-item.active .timeline-logo {
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 12px var(--accent-glow);
+    }
+    
+    .timeline-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding-top: 4px;
+    }
+    
+    .timeline-year {
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      transition: color var(--transition-fast);
+    }
+    
+    .timeline-item.active .timeline-year {
+      color: var(--accent-primary);
+    }
+    
+    .timeline-title {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+    
+    .timeline-desc {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+    
+    .timeline-item:hover .timeline-logo {
+      border-color: var(--accent-secondary);
+    }
+    
+    .timeline-item:hover .timeline-year {
+      color: var(--text-primary);
+    }
+    
     .project-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -408,6 +511,9 @@
       flex-shrink: 0;
       overflow: hidden;
       background: var(--bg-tertiary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     
     .project-image img {
@@ -415,6 +521,16 @@
       height: 100%;
       object-fit: cover;
       transition: transform var(--transition-normal);
+    }
+    
+    .project-image.no-image {
+      background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+    }
+    
+    .project-image.no-image::after {
+      content: '📊';
+      font-size: 3rem;
+      opacity: 0.3;
     }
     
     .project-card:hover .project-image img {
@@ -734,11 +850,11 @@
 <body class="blog-index-page">
   <header class="nav-header">
     <nav class="nav-container">
-      <a href="index.html" class="nav-logo">Corwin Dark</a>
+      <a href="../index.html" class="nav-logo">Corwin Dark</a>
       <ul class="nav-links">
-        <li><a href="index.html" class="">Projects</a></li>
-        <li><a href="resume.html" class="">Resume</a></li>
-        <li><a href="blog/index.html" class="active">LLM Blog</a></li>
+        <li><a href="../index.html" class="">Projects</a></li>
+        <li><a href="../resume.html" class="">Resume</a></li>
+        <li><a href="index.html" class="active">LLM Blog</a></li>
       </ul>
       <div class="nav-social">
         <a href="https://github.com/corwindark" target="_blank" rel="noopener" title="GitHub">
@@ -757,13 +873,20 @@
   <div class="main-layout">
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-content">
-        <img src="assets/images/self.png" alt="Corwin Dark" class="sidebar-image" id="sidebar-image">
-        <p class="sidebar-title" id="sidebar-title">Present Day</p>
-        <p class="sidebar-bio" id="sidebar-bio">Currently focused on data science and machine learning applications in financial markets.</p>
-        <div class="sidebar-era-indicator">
-          <span class="era-dot"></span>
-          <span id="current-era">2024</span>
-        </div>
+        <img src="../assets/images/self.png" alt="Corwin Dark" class="sidebar-image">
+<p class="sidebar-title">LLM Blog</p>
+<p class="sidebar-bio">Building a foundation language model from scratch.</p>
+<div class="sidebar-timeline">
+  <div class="timeline-track"></div>
+  
+    <div class="timeline-item" data-year="2024">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <span class="timeline-year">2024</span>
+        <span class="timeline-desc">1 post</span>
+      </div>
+    </div>
+</div>
       </div>
     </aside>
     
@@ -776,7 +899,7 @@
 
 <section class="blog-posts">
   
-<article class="blog-card">
+<article class="blog-card" data-date="Tue Dec 31 2024 16:00:00 GMT-0800 (Pacific Standard Time)" data-year="2024">
   <a href="intro.html">
     <time datetime="Tue Dec 31 2024 16:00:00 GMT-0800 (Pacific Standard Time)">December 2024</time>
     <span class="series-badge">Building a Foundation LLM - Part 1</span>
@@ -784,7 +907,6 @@
     <p>Kicking off a blog series on building a foundation language model from scratch.</p>
   </a>
 </article>
-
 </section>
 
     </main>
@@ -829,49 +951,126 @@
       });
     });
     
-    // Scroll-aware sidebar (only on home page)
-    if (typeof SIDEBAR_ERAS !== 'undefined' && document.querySelector('.home-page')) {
-      const sidebarImage = document.getElementById('sidebar-image');
-      const sidebarTitle = document.getElementById('sidebar-title');
-      const sidebarBio = document.getElementById('sidebar-bio');
-      const currentEraSpan = document.getElementById('current-era');
+    // Blog timeline scrolling (only on blog index page)
+    if (document.querySelector('.blog-index-page')) {
+      const timelineItems = document.querySelectorAll('.timeline-item');
+      const blogCards = document.querySelectorAll('.blog-card');
       
-      // Create intersection observers for each project card
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const year = entry.target.dataset.year;
-            updateSidebar(year);
-          }
+      if (timelineItems.length > 0 && blogCards.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const cardYear = new Date(entry.target.dataset.date).getFullYear();
+              
+              // Update timeline items
+              timelineItems.forEach(item => {
+                item.classList.remove('active');
+                if (parseInt(item.dataset.year) === cardYear) {
+                  item.classList.add('active');
+                }
+              });
+            }
+          });
+        }, {
+          threshold: 0.3,
+          rootMargin: '-100px 0px -50% 0px'
         });
-      }, { 
-        threshold: 0.5,
-        rootMargin: '-100px 0px -50% 0px'
-      });
-      
-      document.querySelectorAll('.project-card').forEach(card => {
-        observer.observe(card);
-      });
-      
-      function updateSidebar(year) {
-        // Find the closest era
-        const eras = Object.keys(SIDEBAR_ERAS).map(Number).sort((a, b) => b - a);
-        let selectedEra = eras[eras.length - 1];
         
-        for (const era of eras) {
-          if (parseInt(year) >= era) {
-            selectedEra = era;
-            break;
+        blogCards.forEach(card => {
+          observer.observe(card);
+        });
+        
+        // Set initial active item based on first post
+        if (blogCards.length > 0) {
+          const firstYear = new Date(blogCards[0].dataset.date).getFullYear();
+          timelineItems.forEach(item => {
+            if (parseInt(item.dataset.year) === firstYear) {
+              item.classList.add('active');
+            }
+          });
+        }
+        
+        // Click on timeline item to scroll to first post of that year
+        timelineItems.forEach(item => {
+          item.addEventListener('click', () => {
+            const year = item.dataset.year;
+            const targetCard = document.querySelector(`.blog-card[data-year="${year}"]`);
+            if (targetCard) {
+              targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+          });
+        });
+      }
+    }
+    
+    // Sidebar timeline scrolling (only on home page)
+    if (document.querySelector('.home-page')) {
+      const timelineItems = document.querySelectorAll('.timeline-item');
+      const projectCards = document.querySelectorAll('.project-card');
+      
+      if (timelineItems.length > 0 && projectCards.length > 0) {
+        // Get timeline start years sorted descending
+        const timelineYears = Array.from(timelineItems).map(item => ({
+          element: item,
+          startYear: parseInt(item.dataset.startYear)
+        })).sort((a, b) => b.startYear - a.startYear);
+        
+        // Find which timeline entry a project year belongs to
+        function findTimelineEntry(projectYear) {
+          for (const entry of timelineYears) {
+            if (projectYear >= entry.startYear) {
+              return entry.element;
+            }
+          }
+          return timelineYears[timelineYears.length - 1]?.element;
+        }
+        
+        // Track which year is currently most visible
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const year = parseInt(entry.target.dataset.year);
+              const matchingEntry = findTimelineEntry(year);
+              
+              // Update timeline items
+              timelineItems.forEach(item => item.classList.remove('active'));
+              if (matchingEntry) {
+                matchingEntry.classList.add('active');
+              }
+            }
+          });
+        }, {
+          threshold: 0.3,
+          rootMargin: '-100px 0px -50% 0px'
+        });
+        
+        projectCards.forEach(card => {
+          observer.observe(card);
+        });
+        
+        // Set initial active item based on first visible project
+        if (projectCards.length > 0) {
+          const firstYear = parseInt(projectCards[0].dataset.year);
+          const matchingEntry = findTimelineEntry(firstYear);
+          if (matchingEntry) {
+            matchingEntry.classList.add('active');
           }
         }
         
-        const eraData = SIDEBAR_ERAS[selectedEra];
-        if (eraData) {
-          sidebarImage.src = `assets/images/${eraData.image}`;
-          sidebarTitle.textContent = eraData.title;
-          sidebarBio.textContent = eraData.bio;
-          currentEraSpan.textContent = selectedEra;
-        }
+        // Click on timeline item to scroll to first project within that era
+        timelineItems.forEach(item => {
+          item.addEventListener('click', () => {
+            const startYear = parseInt(item.dataset.startYear);
+            // Find first project card with year >= startYear
+            const targetCard = Array.from(projectCards).find(card => {
+              const cardYear = parseInt(card.dataset.year);
+              return cardYear >= startYear;
+            });
+            if (targetCard) {
+              targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+          });
+        });
       }
     }
     

@@ -111,31 +111,32 @@ function readJsonData(filename) {
 
 // Generate project cards HTML
 function generateProjectCards(projects, filterByLabel = null) {
-  return projects
+  const sortedProjects = projects
     .filter(p => !filterByLabel || p.labels.includes(filterByLabel))
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .map(project => {
-      const labelsHtml = project.labels
-        .map(label => `<span class="label" data-label="${label}">${label}</span>`)
-        .join('');
-      
-      const dateFormatted = formatDate(project.date);
-      const year = new Date(project.date).getFullYear();
-      
-      let href = `projects/${project.id}.html`;
-      if (project.customPage) {
-        href = project.customPage;
-      } else if (project.isBlogLink) {
-        href = 'blog/index.html';
-      }
-      
-      const featuredClass = project.featured ? 'featured' : '';
-      
-      return `
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
+  
+  return sortedProjects.map(project => {
+    const labelsHtml = project.labels
+      .map(label => `<span class="label" data-label="${label}">${label}</span>`)
+      .join('');
+    
+    const dateFormatted = formatDate(project.date);
+    const year = new Date(project.date).getFullYear();
+    
+    let href = `projects/${project.id}.html`;
+    if (project.customPage) {
+      href = project.customPage;
+    } else if (project.isBlogLink) {
+      href = 'blog/index.html';
+    }
+    
+    const featuredClass = project.featured ? 'featured' : '';
+    
+    return `
 <article class="project-card ${featuredClass}" data-year="${year}" data-labels="${project.labels.join(',')}">
   <a href="${href}" class="project-link">
     <div class="project-image">
-      <img src="assets/images/${project.image}" alt="${project.title}" loading="lazy" onerror="this.src='assets/images/placeholder.jpg'">
+      <img src="assets/images/${project.image}" alt="${project.title}" loading="lazy" onerror="this.onerror=null; this.style.display='none'; this.parentElement.classList.add('no-image');">
     </div>
     <div class="project-content">
       <time datetime="${project.date}">${dateFormatted}</time>
@@ -145,8 +146,36 @@ function generateProjectCards(projects, filterByLabel = null) {
     </div>
   </a>
 </article>`;
-    })
-    .join('\n');
+  }).join('\n');
+}
+
+// Generate sidebar timeline from timeline config
+function generateSidebarTimeline(timelineEntries, assetsPrefix = 'assets/images/') {
+  // Generate timeline HTML from configured entries
+  const timelineItems = timelineEntries.map(entry => {
+    const logoHtml = entry.logo 
+      ? `<img src="${assetsPrefix}${entry.logo}" alt="${entry.title}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+         <span class="timeline-logo-placeholder" style="display:none;">●</span>`
+      : `<span class="timeline-logo-placeholder">●</span>`;
+    
+    return `
+    <div class="timeline-item" data-start-year="${entry.startYear}" data-id="${entry.id}">
+      <div class="timeline-logo">
+        ${logoHtml}
+      </div>
+      <div class="timeline-content">
+        <span class="timeline-year">${entry.year}</span>
+        <span class="timeline-title">${entry.title}</span>
+        ${entry.description ? `<span class="timeline-desc">${entry.description}</span>` : ''}
+      </div>
+    </div>`;
+  }).join('\n');
+  
+  return `
+<div class="sidebar-timeline">
+  <div class="timeline-track"></div>
+  ${timelineItems}
+</div>`;
 }
 
 // Generate unique labels from all projects
@@ -183,12 +212,17 @@ const SIDEBAR_ERAS = ${JSON.stringify(eras, null, 2)};
 // Build the home page
 function buildHomePage() {
   const projects = readJsonData('projects.json');
-  const sidebarEras = readJsonData('sidebar-eras.json');
+  const timelineConfig = readJsonData('sidebar-timeline.json');
   const template = readTemplate('base.html');
   
   const projectCards = generateProjectCards(projects);
   const labelFilters = generateLabelFilters(projects);
-  const sidebarScript = generateSidebarErasScript(sidebarEras);
+  const sidebarTimeline = generateSidebarTimeline(timelineConfig);
+  
+  const homeSidebarContent = `<img src="assets/images/self.png" alt="Corwin Dark" class="sidebar-image">
+<p class="sidebar-title">Corwin Dark</p>
+<p class="sidebar-bio">Data scientist focused on machine learning and statistical methods for financial markets.</p>
+${sidebarTimeline}`;
   
   const html = renderTemplate(template, {
     title: 'Corwin Dark - Data Science Portfolio',
@@ -196,6 +230,10 @@ function buildHomePage() {
     navHome: 'active',
     navResume: '',
     navBlog: '',
+    navHomeUrl: 'index.html',
+    navResumeUrl: 'resume.html',
+    navBlogUrl: 'blog/index.html',
+    sidebarContent: homeSidebarContent,
     content: `
 <section class="intro">
   <h1>Data Science for Financial Markets</h1>
@@ -212,7 +250,7 @@ function buildHomePage() {
   ${projectCards}
 </section>
 `,
-    sidebarErasScript: sidebarScript
+    sidebarErasScript: ''
   });
   
   ensureDir(CONFIG.outDir);
@@ -275,12 +313,20 @@ function buildProjectPages() {
 function buildResumePage() {
   const template = readTemplate('base.html');
   
+  const resumeSidebarContent = `<img src="assets/images/self.png" alt="Corwin Dark" class="sidebar-image">
+<p class="sidebar-title">Corwin Dark</p>
+<p class="sidebar-bio">Data scientist focused on machine learning and statistical methods for financial markets.</p>`;
+  
   const html = renderTemplate(template, {
     title: 'Resume - Corwin Dark',
     pageClass: 'resume-page',
     navHome: '',
     navResume: 'active',
     navBlog: '',
+    navHomeUrl: 'index.html',
+    navResumeUrl: 'resume.html',
+    navBlogUrl: 'blog/index.html',
+    sidebarContent: resumeSidebarContent,
     content: `
 <section class="resume-section">
   <h1>Resume</h1>
@@ -356,16 +402,56 @@ function buildBlogPages() {
   });
   
   // Generate blog index
-  const postsHtml = posts.map(post => `
-<article class="blog-card">
+  const postsHtml = posts.map(post => {
+    const year = new Date(post.date).getFullYear();
+    return `
+<article class="blog-card" data-date="${post.date}" data-year="${year}">
   <a href="${post.slug}.html">
     <time datetime="${post.date}">${formatDate(post.date)}</time>
     ${post.series ? `<span class="series-badge">${post.series} - Part ${post.part}</span>` : ''}
     <h3>${post.title}</h3>
     <p>${post.description}</p>
   </a>
-</article>
-`).join('\n');
+</article>`;
+  }).join('\n');
+  
+  // Generate timeline sidebar for blog
+  // Group posts by year and create timeline markers
+  const timelineData = {};
+  posts.forEach(post => {
+    const year = new Date(post.date).getFullYear();
+    if (!timelineData[year]) {
+      timelineData[year] = {
+        year,
+        posts: []
+      };
+    }
+    timelineData[year].posts.push(post);
+  });
+  
+  // Sort years descending
+  const years = Object.keys(timelineData).map(Number).sort((a, b) => b - a);
+  
+  // Generate timeline items (reusing the sidebar-timeline style)
+  const timelineItems = years.map(year => {
+    const yearData = timelineData[year];
+    return `
+    <div class="timeline-item" data-year="${year}">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <span class="timeline-year">${year}</span>
+        <span class="timeline-desc">${yearData.posts.length} post${yearData.posts.length > 1 ? 's' : ''}</span>
+      </div>
+    </div>`;
+  }).join('\n');
+  
+  const blogSidebarContent = `<img src="../assets/images/self.png" alt="Corwin Dark" class="sidebar-image">
+<p class="sidebar-title">LLM Blog</p>
+<p class="sidebar-bio">Building a foundation language model from scratch.</p>
+<div class="sidebar-timeline">
+  <div class="timeline-track"></div>
+  ${timelineItems}
+</div>`;
   
   const blogIndexHtml = renderTemplate(template, {
     title: 'Blog: Building a Foundation LLM - Corwin Dark',
@@ -373,6 +459,9 @@ function buildBlogPages() {
     navHome: '',
     navResume: '',
     navBlog: 'active',
+    navHomeUrl: '../index.html',
+    navResumeUrl: '../resume.html',
+    navBlogUrl: 'index.html',
     content: `
 <section class="blog-header">
   <h1>Building a Foundation LLM</h1>
@@ -383,6 +472,7 @@ function buildBlogPages() {
   ${postsHtml || '<p>Coming soon...</p>'}
 </section>
 `,
+    sidebarContent: blogSidebarContent,
     sidebarErasScript: ''
   });
   
@@ -406,11 +496,15 @@ function copyAssets() {
     copyDirRecursive('images', path.join(assetsOutDir, 'images'));
   }
   
-  // Copy resume if exists
-  const resumePath = path.join(CONFIG.dataDir, 'resume.pdf');
-  if (fs.existsSync(resumePath)) {
-    fs.copyFileSync(resumePath, path.join(assetsOutDir, 'resume.pdf'));
-    console.log('Copied: resume.pdf');
+  // Copy resume if exists (check root folder first, then data dir)
+  const resumeRootPath = 'Corwin Dark Resume January 2026.pdf';
+  const resumeDataPath = path.join(CONFIG.dataDir, 'resume.pdf');
+  if (fs.existsSync(resumeRootPath)) {
+    fs.copyFileSync(resumeRootPath, path.join(assetsOutDir, 'resume.pdf'));
+    console.log('Copied: resume.pdf from root folder');
+  } else if (fs.existsSync(resumeDataPath)) {
+    fs.copyFileSync(resumeDataPath, path.join(assetsOutDir, 'resume.pdf'));
+    console.log('Copied: resume.pdf from data folder');
   }
   
   // Copy favicon
