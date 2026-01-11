@@ -1,0 +1,87 @@
+[
+  {
+    "id": "ab-test",
+    "title": "Driving Game Profitability with AB Tests",
+    "date": "2024-10-15",
+    "labels": ["AB Testing", "Python"],
+    "image": "ab-test-preview.jpg",
+    "description": "Using AB tests to drive greater engagement and conversion rate throughout the funnel of a game I developed on the Roblox platform, improving return by 30%.",
+    "featured": true
+  },
+  {
+    "id": "reddit-comments",
+    "title": "Mining Features from Massive Comment Datasets",
+    "date": "2024-08-01",
+    "labels": ["PySpark", "NLP", "NLTK", "AzureML", "Sagemaker", "Big Data"],
+    "image": "reddit-preview.jpg",
+    "description": "Predicting retail trader activity through Natural Language processing across more than 700 million Reddit comments. Accomplished via PySpark, with elements of the pipeline done in both AWS and Azure ecosystems simultaneously."
+  },
+  {
+    "id": "torchmole",
+    "title": "Encoding Atomic Environments with PyTorch",
+    "date": "2024-06-01",
+    "labels": ["PyTorch", "Package Development", "CI/CD", "Data Visualization", "Python"],
+    "image": "torchmole-preview.jpg",
+    "description": "Building TorchMole, a Python package for encoding atomic environments using graph neural networks."
+  },
+  {
+    "id": "arches",
+    "title": "Visualizing Climate Changes in Arches National Monument",
+    "date": "2020-01-01",
+    "labels": ["JavaScript", "D3.js", "Data Visualization", "GIS"],
+    "image": "arches-preview.png",
+    "description": "Interactive scrollytelling visualization exploring climate change impacts on Natural Bridges National Monument using D3.js.",
+    "customPage": "arch_projects/arches.html"
+  },
+  {
+    "id": "ensembling",
+    "title": "Metalearning in Time Series Ensembles",
+    "date": "2021-06-01",
+    "labels": ["Neural Networks", "Keras", "Time Series", "ARIMA", "GARCH", "Financial Markets", "Python"],
+    "image": "ensembling-preview.jpg",
+    "description": "Can we use deep learning models to identify market conditions where particular statistical models are more effective? Improving ensemble performance through intelligent model selection."
+  },
+  {
+    "id": "building-mmt",
+    "title": "Building an Engaging Hypercasual Roblox Game",
+    "date": "2022-03-01",
+    "labels": ["Product Design", "Entrepreneurship", "Lua", "CI/CD"],
+    "image": "mmt-preview.jpg",
+    "description": "Designing and developing a hypercasual game on the Roblox platform, focusing on engagement metrics and monetization strategies."
+  },
+  {
+    "id": "forecasting-volatility",
+    "title": "Forecasting Volatility with Nontraditional Data",
+    "date": "2021-01-01",
+    "labels": ["Time Series", "ARIMA", "GARCH", "Financial Markets", "R"],
+    "image": "volatility-preview.jpg",
+    "description": "Applying statistical forecasting methods with external datasets to predict market volatility."
+  },
+  {
+    "id": "reddit-partone",
+    "title": "Boosted Trees for Reddit Comment Analysis",
+    "date": "2020-06-01",
+    "labels": ["XGBoost", "Random Forests", "API", "Naive Bayes", "Python"],
+    "image": "reddit-trees-preview.jpg",
+    "description": "Evaluating the impact of Reddit sentiment on market movements using gradient boosted trees and ensemble methods."
+  },
+  {
+    "id": "portfolio-shinyapp",
+    "title": "Automating my ETF Portfolio",
+    "date": "2020-03-01",
+    "labels": ["Shiny", "R", "Web Apps", "Portfolio Management"],
+    "image": "shiny-preview.jpg",
+    "description": "Building a ShinyApp web application to automate all of the rebalancing, tax-harvesting, and routine buying required to manage my ETF portfolio."
+  },
+  {
+    "id": "llm-blog",
+    "title": "Building a Foundation LLM from Scratch",
+    "date": "2025-01-01",
+    "labels": ["PyTorch", "Transformers", "NLP", "Deep Learning"],
+    "image": "llm-preview.jpg",
+    "description": "A blog series documenting my journey building a simple foundation language model from the ground up.",
+    "isBlogLink": true,
+    "featured": true
+  }
+]
+

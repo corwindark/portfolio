@@ -1,0 +1,18 @@
+{
+  "2024": {
+    "image": "self-2024.png",
+    "title": "Present Day",
+    "bio": "Currently focused on data science and machine learning applications in financial markets."
+  },
+  "2022": {
+    "image": "self-2022.png",
+    "title": "2022-2023",
+    "bio": "Explored game development and product design while building data pipelines at scale."
+  },
+  "2020": {
+    "image": "self-2020.png",
+    "title": "2020-2021",
+    "bio": "International development consulting, applying data science to economic and social challenges."
+  }
+}
+
